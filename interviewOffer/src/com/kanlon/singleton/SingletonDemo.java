@@ -87,21 +87,20 @@ class Singleton4 {
 }
 
 /**
- * 方法五：使用了内部类创建实例
- *
- * @author zhangcanlong
- * @date 2018年9月16日
+ * 方法五：使用了内部类创建实例(推荐)
+ * 使用内部类可以避免这个问题，因为在多线程环境下，jvm对一个类的初始化会做限制，
+ * 同一时间只会允许一个线程去初始化一个类，这样就从虚拟机层面避免了大部分单例实现的问题
  */
 class Singleton5 {
 	private Singleton5() {
 	}
 
-	private static Singleton5 getInstance() {
+	private static  final Singleton5 getInstance() {
 		return Nested.singleton;
 	}
 
 	static class Nested {
-		private static Singleton5 singleton = new Singleton5();
+		private static final Singleton5 singleton = new Singleton5();
 	}
 
 }
