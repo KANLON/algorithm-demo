@@ -11,5 +11,5 @@
 6      8      11    15
 ```
 ### 解题思路
-从角落开始查找，首先选取数组中右上角的数字。如果该数字等于要查找的数字，查找过程结束；如果该数字大于要查找的数字，剔除这个数字所在的列；如果该数字小于要查找的数字，剔除这个数字所在的行。
-<img src='http://kanlon.ink/images/slide2.png'/>
+从角落开始查找，首先选取数组中右上角的数字。如果该数字等于要查找的数字，查找过程结束；如果该数字大于要查找的数字，剔除这个数字所在的列；如果该数字小于要查找的数字，剔除这个数字所在的行。<br/>
+<img src='https://raw.githubusercontent.com/KANLON/algorithmDemo/master/image/array_find_7.PNG'/>

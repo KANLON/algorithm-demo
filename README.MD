@@ -9,7 +9,7 @@ class  CMyString{
 }
 
 #### 面试题2：实现Singleton模式
-题目：设计一个类，我们只能生成该类的一个实例。
+题目：设计一个类，我们只能生成该类的一个实例。<br/><br/>
 答案：<br/>
 <a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/singleton'>singleton</a>
 
@@ -32,7 +32,9 @@ class  CMyString{
 题目：请实现一个函数，把字符串中每个空格替换成"%20"。例如输入“We are happy.”，则输出“We%20are%20happy.”。
 <br/>其实这里应该表述成，把字符数组中的空格替换为%20。这样才能体现出这个题目问题的本质。
 <br/><br/>
-扩展：有两个排序的数组A1和A2，内存在A1的末尾有足够多的空余空间容纳A2。请实现一个函数，把A2中的所有数字插入到A1中并且所有数字都是排序的。
+扩展：有两个排序的数组A1和A2，内存在A1的末尾有足够多的空余空间容纳A2。请实现一个函数，把A2中的所有数字插入到A1中并且所有数字都是排序的。<br/><br/>
+答案：<br/>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/blank'>blank</a>
 
 ## 算法技巧
 1.如果要筛选出某个相同的数，使用HashMap。<br/>
