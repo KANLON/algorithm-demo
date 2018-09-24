@@ -36,6 +36,20 @@ class  CMyString{
 答案：<br/>
 <a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/blank'>blank</a>
 
+#### 面试题5：从尾到头打印链表
+题目：输入一个链表的头结点，从尾到头反过来打印出每个结点的值。<br/>
+链表的结点定义如下：
+```
+class ListNode
+{
+	int mNKey;
+	ListNode mPNext;
+}
+```
+答案：<br/>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/listnode'>listnode</a>
+
+
 ## 算法技巧
 1.如果要筛选出某个相同的数，使用HashMap。<br/>
 2.如果要筛选出某个不同的数，可以使用异或运算。<br/>
