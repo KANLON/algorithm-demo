@@ -89,13 +89,39 @@ class CQueue{
 答案：<br/>
 <a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/rotate'>rotate</a>
 
+#### 面试题9：斐波那契数列
+题目一：写一个函数，输入n，求斐波那契（Fibonacci）数列的第n项。斐波那契数列的定义如下：
+<img src="https://raw.githubusercontent.com/KANLON/algorithmDemo/master/image/fibonacci.PNG"/><br/>
+题目2：一只青蛙一次可以跳上1个台阶，可以跳上2级。求该青蛙跳上一个n级的台阶共有多少种跳法。（等价于题目1）<br/>
+
+拓展题目：<br/>
+拓展1：在青蛙跳台阶的问题中，如果把条件改成：一只青蛙一次可以跳上1级台阶，也可以跳上2级。。。。。。它也可以跳上n级，此时该青蛙跳上一个台阶总共有多少种跳法？<br/>
+拓展2：我们可以用2X1（下图左边）的小矩形横着或者竖着去覆盖更大的矩形。请问用8个2X1的小矩形无重叠地覆盖一个2X8的大矩形（下图右边），总共有多少种方法？<br/>
+<img src="https://raw.githubusercontent.com/KANLON/algorithmDemo/master/image/matrix28.PNG"/><br/>
+答案：<br/>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/fibonacci'>fibonacci</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### 其他题目
 1.实现一个排序算法，要求时间效率O(n).对公司所有员工的年龄排序，公司总共有几万名员工。可以用辅助空间，只允许使用常量大小辅助空间，不得超过O(n)。
 答案：<br/>
 <a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/nsort'>nsort</a>
 
-
+2.比较两个数组是否相等，都含有一样的元素，并且一样的元素的个数相同。
+答案：<br/>
+[comareEquals](https://github.com/KANLON/algorithmDemo/tree/master/other/compareEquals.java)
 
 ## 算法技巧
 1.如果要筛选出某个相同的数，使用HashMap。<br/>
