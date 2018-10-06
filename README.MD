@@ -103,6 +103,14 @@ class CQueue{
 
 #### 面试题10：二进制中1的个数
 题目：请实现一个函数，输入一个整数，输出该数二进制中1的个数。例如把9表示成二进制是1001，有2位是1。因此，如果输入9，该函数输出2。
+答案：<br/>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/numof1inbinary'>numof1inbinary</a><br/>
+
+#### 面试题11：数值的整数次方
+题目：实现函数double Power(double base,int exponent)，求base的exponent次方。不得使用库函数，同时不需要考虑大数问题。
+答案：<br/>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/power'>power</a><br/>
+
 
 
 
