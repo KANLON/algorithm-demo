@@ -81,7 +81,7 @@ class CQueue{
 答案：<br/>
 <a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/queue2stack'>queue2stack</a>
 
-拓展：用两个队列实现栈
+##### 拓展：用两个队列实现栈
 
 #### 面试题8：旋转数组的最小数字
 题目：把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1.
@@ -94,13 +94,15 @@ class CQueue{
 <img src="https://raw.githubusercontent.com/KANLON/algorithmDemo/master/image/fibonacci.PNG"/><br/>
 题目2：一只青蛙一次可以跳上1个台阶，可以跳上2级。求该青蛙跳上一个n级的台阶共有多少种跳法。（等价于题目1）<br/>
 
-拓展题目：<br/>
+##### 拓展题目：<br/>
 拓展1：在青蛙跳台阶的问题中，如果把条件改成：一只青蛙一次可以跳上1级台阶，也可以跳上2级。。。。。。它也可以跳上n级，此时该青蛙跳上一个台阶总共有多少种跳法？<br/>
 拓展2：我们可以用2X1（下图左边）的小矩形横着或者竖着去覆盖更大的矩形。请问用8个2X1的小矩形无重叠地覆盖一个2X8的大矩形（下图右边），总共有多少种方法？<br/>
 <img src="https://raw.githubusercontent.com/KANLON/algorithmDemo/master/image/matrix28.PNG"/><br/>
 答案：<br/>
-<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/fibonacci'>fibonacci</a>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/fibonacci'>fibonacci</a><br/>
 
+#### 面试题10：二进制中1的个数
+题目：请实现一个函数，输入一个整数，输出该数二进制中1的个数。例如把9表示成二进制是1001，有2位是1。因此，如果输入9，该函数输出2。
 
 
 
@@ -127,4 +129,5 @@ class CQueue{
 1.如果要筛选出某个相同的数，使用HashMap。<br/>
 2.如果要筛选出某个不同的数，可以使用异或运算。<br/>
 3.如果从前往后复制每个数字（或字符）需要移动数字（或字符）多次，可以考虑从后往前复制。
+4.把一个整数减去1之后再和原来的整数做位与运算，得到的结果相当于是把整数的二进制表示中的最右边一个1变成0.
 
