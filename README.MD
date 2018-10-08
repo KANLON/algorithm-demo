@@ -107,9 +107,16 @@ class CQueue{
 <a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/numof1inbinary'>numof1inbinary</a><br/>
 
 #### 面试题11：数值的整数次方
-题目：实现函数double Power(double base,int exponent)，求base的exponent次方。不得使用库函数，同时不需要考虑大数问题。
+题目：实现函数double Power(double base,int exponent)，求base的exponent次方。不得使用库函数，同时不需要考虑大数问题。<br/>
 答案：<br/>
 <a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/power'>power</a><br/>
+
+#### 面试题12：打印1到最大的n位数
+题目：输入数字n，按顺序打印出从1最大的n位十进制数。比如输入3，则打印出1、2、3一直到最大的3位数即999.<br/>
+答案：<br/>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/printnumber'>printnumber</a><br/>
+<br/>
+##### 拓展：定义一个函数，在该函数中可以实现任意两个整数的加法。
 
 
 
