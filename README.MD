@@ -118,26 +118,29 @@ class CQueue{
 <br/>
 ##### 拓展：定义一个函数，在该函数中可以实现任意两个整数的加法。
 
-
-
-
-
-
-
-
-
-
-
+#### 面试题13：在O(1)时间删除链表结点
+题目：给定单向链表的头指针和一个结点指针，定义一个函数在O(1)时间删除该结点。链表结点和函数的定义如下：
+```
+class ListNode{
+	int mNValue;
+	ListNode mPNext;
+}
+public void deleteNode(ListNode pListHead,ListNode pToBeDeleted);
+	
+```
+答案：<br/>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/deletenode'>deletenode</a><br/>
+<br/>
 
 
 
 ### 其他题目
-1.实现一个排序算法，要求时间效率O(n).对公司所有员工的年龄排序，公司总共有几万名员工。可以用辅助空间，只允许使用常量大小辅助空间，不得超过O(n)。
-答案：<br/>
+1.实现一个排序算法，要求时间效率O(n).对公司所有员工的年龄排序，公司总共有几万名员工。可以用辅助空间，只允许使用常量大小辅助空间，不得超过O(n)。<br/>
+答案：
 <a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/nsort'>nsort</a>
 
-2.比较两个数组是否相等，都含有一样的元素，并且一样的元素的个数相同。
-答案：<br/>
+2.比较两个数组是否相等，都含有一样的元素，并且一样的元素的个数相同。<br/>
+答案：
 [comareEquals](https://github.com/KANLON/algorithmDemo/tree/master/other/compareEquals.java)
 
 ## 算法技巧
