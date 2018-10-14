@@ -132,6 +132,13 @@ public void deleteNode(ListNode pListHead,ListNode pToBeDeleted);
 <a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/deletenode'>deletenode</a><br/>
 <br/>
 
+#### 面试题14：调整数组顺序使奇数位于偶数前面
+题目：输入一个整数数组，实现一个函数来调整该数组中的数字的顺序，使得所有奇数位于数组的前半部分，所有偶数位于数组的后半部分。
+答案：<br/>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/recorderarray'>recorderarray</a><br/>
+<br/>
+
+
 
 
 ### 其他题目
