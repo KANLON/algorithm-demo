@@ -165,6 +165,12 @@ class ListNode{
 答案：
 [comareEquals](https://github.com/KANLON/algorithmDemo/tree/master/other/compareEquals.java)
 
+3.对字符数组进行全排序，要求输出全排序的结果。例如：对{a,b,c}全排序输出：abc,acb,bac,bca,cba,cab。<br/>
+答案：
+[totalsort](https://github.com/KANLON/algorithmDemo/tree/master/other/totalsort)
+
+
+
 ## 算法技巧
 1.如果要筛选出某个相同的数，使用HashMap。<br/>
 2.如果要筛选出某个不同的数，可以使用异或运算。<br/>
