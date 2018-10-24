@@ -159,7 +159,19 @@ class ListNode{
 答案：<br/>
 <a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/kth_node_from_end'>kth_node_from_end</a><br/>
 
+#### 面试题16：反转链表
+题目：定义一个函数，输入一个链表的头结点，反转该链表并输出反转后链表的头结点。链表结点定义如下：
+链表结点定义如下：
+```
+class ListNode{
+	int m_nvalue;
+	ListNode m_pNext;
+}
+```
 
+答案：<br/>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/reverse_list'>ReverseList</a><br/>
+<br/>
 
 
 ### 其他题目
@@ -177,9 +189,10 @@ class ListNode{
 
 
 
+
 ## 算法技巧
 1.如果要筛选出某个相同的数，使用HashMap。<br/>
 2.如果要筛选出某个不同的数，可以使用异或运算。<br/>
-3.如果从前往后复制每个数字（或字符）需要移动数字（或字符）多次，可以考虑从后往前复制。
-4.把一个整数减去1之后再和原来的整数做位与运算，得到的结果相当于是把整数的二进制表示中的最右边一个1变成0.
-
+3.如果从前往后复制每个数字（或字符）需要移动数字（或字符）多次，可以考虑从后往前复制。<br/>
+4.把一个整数减去1之后再和原来的整数做位与运算，得到的结果相当于是把整数的二进制表示中的最右边一个1变成0.<br/>
+5.当用一个指针遍历链表不能解决问题的时候，可以使用两个指针遍历链表。可以让其中一个指针遍历的速度快一点，或者让它先在链表上走若干步。<br/>
