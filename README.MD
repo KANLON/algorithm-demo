@@ -153,6 +153,12 @@ class ListNode{
 <a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/kth_node_from_end'>KthNodeFromEnd</a><br/>
 <br/>
 
+##### 拓展题目：<br/>
+拓展1：求链表的中间结点。如果链表中结点总数为奇数，则返回中间结点，如果结点总数是偶数，则返回中间两个结点的任意一个。<br/>
+拓展题目2：判断一个单项链表是否形成了环形结构。<br/>
+答案：<br/>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/kth_node_from_end'>kth_node_from_end</a><br/>
+
 
 
 

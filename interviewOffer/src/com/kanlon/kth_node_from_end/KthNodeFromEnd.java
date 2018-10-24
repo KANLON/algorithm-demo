@@ -143,4 +143,9 @@ public class KthNodeFromEnd {
 class ListNode {
 	int m_nvalue;
 	ListNode m_pNext;
+
+	@Override
+	public String toString() {
+		return "m_nvale:" + m_nvalue;
+	}
 }
