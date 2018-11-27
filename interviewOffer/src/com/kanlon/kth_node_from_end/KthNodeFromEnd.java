@@ -1,12 +1,12 @@
 package com.kanlon.kth_node_from_end;
 
 /**
- * ÃæÊÔÌâ15£ºÁ´±íÖĞµ¹ÊıµÚk¸ö½áµã
- * ÌâÄ¿£ºÊäÈëÒ»¸öÁ´±í£¬Êä³ö¸ÃÁ´±íÖĞµ¹ÊıµÚk¸ö½áµã¡£ÎªÁË·ûºÏ´ó¶àÊıÈËµÄÏ°¹ß£¬±¾Ìâ´Ó1¿ªÊ¼¼ÆÊı£¬¼´Á´±íµÄÎ²½áµãÊ±µ¹ÊıµÚ1¸ö½áµã¡£
- * ÀıÈçÒ»¸öÁ´±íÓĞ6¸ö½áµã£¬´ÓÍ·½áµã¿ªÊ¼ËüÃÇµÄÖµÒÀ´ÎÊÇ1¡¢2¡¢3¡¢4¡¢5¡¢6Õâ¸öÁ´±íµÄµ¹ÊıµÚ3¸ö½áµãÊÇÖµÎª4µÄ½áµã¡£
+ * é¢è¯•é¢˜15ï¼šé“¾è¡¨ä¸­å€’æ•°ç¬¬kä¸ªç»“ç‚¹
+ * é¢˜ç›®ï¼šè¾“å…¥ä¸€ä¸ªé“¾è¡¨ï¼Œè¾“å‡ºè¯¥é“¾è¡¨ä¸­å€’æ•°ç¬¬kä¸ªç»“ç‚¹ã€‚ä¸ºäº†ç¬¦åˆå¤§å¤šæ•°äººçš„ä¹ æƒ¯ï¼Œæœ¬é¢˜ä»1å¼€å§‹è®¡æ•°ï¼Œå³é“¾è¡¨çš„å°¾ç»“ç‚¹æ—¶å€’æ•°ç¬¬1ä¸ªç»“ç‚¹ã€‚
+ * ä¾‹å¦‚ä¸€ä¸ªé“¾è¡¨æœ‰6ä¸ªç»“ç‚¹ï¼Œä»å¤´ç»“ç‚¹å¼€å§‹å®ƒä»¬çš„å€¼ä¾æ¬¡æ˜¯1ã€2ã€3ã€4ã€5ã€6è¿™ä¸ªé“¾è¡¨çš„å€’æ•°ç¬¬3ä¸ªç»“ç‚¹æ˜¯å€¼ä¸º4çš„ç»“ç‚¹ã€‚
  *
  * @author zhangcanlong
- * @date 2018Äê10ÔÂ15ÈÕ
+ * @date 2018å¹´10æœˆ15æ—¥
  */
 public class KthNodeFromEnd {
 
@@ -23,67 +23,67 @@ public class KthNodeFromEnd {
 		node1.m_pNext = node2;
 		node2.m_pNext = node3;
 		node3.m_pNext = node4;
-		// ¹¦ÄÜ²âÊÔ£¨µÚk¸ö½áµãÔÚÁ´±íÖĞ¼ä£©
+		// åŠŸèƒ½æµ‹è¯•ï¼ˆç¬¬kä¸ªç»“ç‚¹åœ¨é“¾è¡¨ä¸­é—´ï¼‰
 		ListNode nodeMethod11 = test.printKthToTail(node1, 2);
 		ListNode nodeMethod21 = test.printKthToTail2(node1, 2);
-		// ¹¦ÄÜ²âÊÔ£¨µÚk¸ö½áµãÊÇÁ´±íÍ·½áµã£©
+		// åŠŸèƒ½æµ‹è¯•ï¼ˆç¬¬kä¸ªç»“ç‚¹æ˜¯é“¾è¡¨å¤´ç»“ç‚¹ï¼‰
 		ListNode nodeMethod12 = test.printKthToTail(node1, 4);
 		ListNode nodeMethod22 = test.printKthToTail2(node1, 4);
-		// ¹¦ÄÜ²âÊÔ£¨µÚk¸ö½áµãÊÇÁ´±íÎ²½áµã£©
+		// åŠŸèƒ½æµ‹è¯•ï¼ˆç¬¬kä¸ªç»“ç‚¹æ˜¯é“¾è¡¨å°¾ç»“ç‚¹ï¼‰
 		ListNode nodeMethod13 = test.printKthToTail(node1, 1);
 		ListNode nodeMethod23 = test.printKthToTail2(node1, 1);
 
-		// ÌØÊâÊäÈë²âÊÔ£¨Á´±í×ÜÊıÉÙÓÚk£©
+		// ç‰¹æ®Šè¾“å…¥æµ‹è¯•ï¼ˆé“¾è¡¨æ€»æ•°å°‘äºkï¼‰
 		ListNode nodeMethod15 = test.printKthToTail(node1, 6);
 		ListNode nodeMethod25 = test.printKthToTail2(node1, 6);
 
-		System.out.println("µÚk¸ö½áµãÔÚÁ´±íÖĞ¼ä--" + nodeMethod11.m_nvalue);
-		System.out.println("µÚk¸ö½áµãÔÚÁ´±íÖĞ¼ä--" + nodeMethod21.m_nvalue);
-		System.out.println("µÚk¸ö½áµãÊÇÁ´±íÍ·½áµã--" + nodeMethod12.m_nvalue);
-		System.out.println("µÚk¸ö½áµãÊÇÁ´±íÍ·½áµã--" + nodeMethod22.m_nvalue);
-		System.out.println("µÚk¸ö½áµãÊÇÁ´±íÎ²½áµã--" + nodeMethod13.m_nvalue);
-		System.out.println("µÚk¸ö½áµãÊÇÁ´±íÎ²½áµã--" + nodeMethod23.m_nvalue);
-		System.out.println("Á´±í×ÜÊıÉÙÓÚk--" + nodeMethod15.m_nvalue);
-		System.out.println("Á´±í×ÜÊıÉÙÓÚk--" + nodeMethod25.m_nvalue);
-		// ÓÉÓÚÕâÁ½¸öÌØÊâ²âÊÔ»á±¨Òì³££¬ËùÒÔ·ÅÔÚÕâÀïµ¥¶ÀÖ´ĞĞ
-		// ÌØÊâÊäÈë²âÊÔ£¨Á´±íÍ·½áµãÎªnullÖ¸Õë£©
+		System.out.println("ç¬¬kä¸ªç»“ç‚¹åœ¨é“¾è¡¨ä¸­é—´--" + nodeMethod11.m_nvalue);
+		System.out.println("ç¬¬kä¸ªç»“ç‚¹åœ¨é“¾è¡¨ä¸­é—´--" + nodeMethod21.m_nvalue);
+		System.out.println("ç¬¬kä¸ªç»“ç‚¹æ˜¯é“¾è¡¨å¤´ç»“ç‚¹--" + nodeMethod12.m_nvalue);
+		System.out.println("ç¬¬kä¸ªç»“ç‚¹æ˜¯é“¾è¡¨å¤´ç»“ç‚¹--" + nodeMethod22.m_nvalue);
+		System.out.println("ç¬¬kä¸ªç»“ç‚¹æ˜¯é“¾è¡¨å°¾ç»“ç‚¹--" + nodeMethod13.m_nvalue);
+		System.out.println("ç¬¬kä¸ªç»“ç‚¹æ˜¯é“¾è¡¨å°¾ç»“ç‚¹--" + nodeMethod23.m_nvalue);
+		System.out.println("é“¾è¡¨æ€»æ•°å°‘äºk--" + nodeMethod15.m_nvalue);
+		System.out.println("é“¾è¡¨æ€»æ•°å°‘äºk--" + nodeMethod25.m_nvalue);
+		// ç”±äºè¿™ä¸¤ä¸ªç‰¹æ®Šæµ‹è¯•ä¼šæŠ¥å¼‚å¸¸ï¼Œæ‰€ä»¥æ”¾åœ¨è¿™é‡Œå•ç‹¬æ‰§è¡Œ
+		// ç‰¹æ®Šè¾“å…¥æµ‹è¯•ï¼ˆé“¾è¡¨å¤´ç»“ç‚¹ä¸ºnullæŒ‡é’ˆï¼‰
 		ListNode nodeMethod14 = test.printKthToTail(null, 6);
 		ListNode nodeMethod24 = test.printKthToTail2(null, 6);
-		// ÌØÊâÊäÈë²âÊÔ£¨kĞ¡ÓÚµÈÓÚ0£©
+		// ç‰¹æ®Šè¾“å…¥æµ‹è¯•ï¼ˆkå°äºç­‰äº0ï¼‰
 		ListNode nodeMethod16 = test.printKthToTail(node1, 0);
 		ListNode nodeMethod26 = test.printKthToTail2(node1, 0);
-		System.out.println("Á´±íÍ·½áµãÎªnullÖ¸Õë--" + nodeMethod14.m_nvalue);
-		System.out.println("Á´±íÍ·½áµãÎªnullÖ¸Õë--" + nodeMethod24.m_nvalue);
-		System.out.println("kĞ¡ÓÚµÈÓÚ0--" + nodeMethod16.m_nvalue);
-		System.out.println("kĞ¡ÓÚµÈÓÚ0--" + nodeMethod26.m_nvalue);
+		System.out.println("é“¾è¡¨å¤´ç»“ç‚¹ä¸ºnullæŒ‡é’ˆ--" + nodeMethod14.m_nvalue);
+		System.out.println("é“¾è¡¨å¤´ç»“ç‚¹ä¸ºnullæŒ‡é’ˆ--" + nodeMethod24.m_nvalue);
+		System.out.println("kå°äºç­‰äº0--" + nodeMethod16.m_nvalue);
+		System.out.println("kå°äºç­‰äº0--" + nodeMethod26.m_nvalue);
 
 	}
 
 	/**
-	 * ½âÌâË¼Â·1£ºÏÈÍ³¼Æ³öËùÓĞÁ´±íµÄ³¤¶È£¬È»ºóÓÃ¸Ã³¤¶È¼õÈ¥k+1£¬µÃµ½µ¹ÊıµÚk¸ö½áµã£¬Ë³ĞòµÄÎ»ÖÃ£¬È»ºóÔÙË³Ğò±éÀú
-	 * ×¢Òâ£ºÈç¹ûk´óÓÚlength£¬Ôò¶ÔkµÈÓÚk mod length£¬ÁíÍâÈç¹ûÈ¡Ä£ºóµÄÖµµÈÓÚ0£¬Ôòk=length
+	 * è§£é¢˜æ€è·¯1ï¼šå…ˆç»Ÿè®¡å‡ºæ‰€æœ‰é“¾è¡¨çš„é•¿åº¦ï¼Œç„¶åç”¨è¯¥é•¿åº¦å‡å»k+1ï¼Œå¾—åˆ°å€’æ•°ç¬¬kä¸ªç»“ç‚¹ï¼Œé¡ºåºçš„ä½ç½®ï¼Œç„¶åå†é¡ºåºéå†
+	 * æ³¨æ„ï¼šå¦‚æœkå¤§äºlengthï¼Œåˆ™å¯¹kç­‰äºk mod lengthï¼Œå¦å¤–å¦‚æœå–æ¨¡åçš„å€¼ç­‰äº0ï¼Œåˆ™k=length
 	 *
 	 * @param head
-	 *            Òª´òÓ¡µÄÁ´±í
+	 *            è¦æ‰“å°çš„é“¾è¡¨
 	 * @param k
-	 *            µ¹ÊıµÚ¼¸¸ö½áµã
-	 * @return µ¹ÊıµÄ¸Ã½áµã
+	 *            å€’æ•°ç¬¬å‡ ä¸ªç»“ç‚¹
+	 * @return å€’æ•°çš„è¯¥ç»“ç‚¹
 	 */
 	public ListNode printKthToTail(ListNode head, int k) {
 		if (head == null || head.m_pNext == null) {
 			return head;
 		}
 		if (k <= 0) {
-			throw new RuntimeException("k²»ÄÜĞ¡ÓÚµÈÓÚ0");
+			throw new RuntimeException("kä¸èƒ½å°äºç­‰äº0");
 		}
-		// ±éÀúµÃµ½³¤¶È
+		// éå†å¾—åˆ°é•¿åº¦
 		int length = 1;
 		ListNode temp1 = head;
 		while (temp1.m_pNext != null) {
 			length++;
 			temp1 = temp1.m_pNext;
 		}
-		// ½«k¶ÔlengthÈ¡Óà
+		// å°†kå¯¹lengthå–ä½™
 		k = k % length;
 		if (k == 0) {
 			k = length;
@@ -99,26 +99,26 @@ public class KthNodeFromEnd {
 	}
 
 	/**
-	 * ½âÌâË¼Â·2£º¶¨ÒåÁ½¸öÖ¸Õë¶¼Ö¸ÏòÊ×½áµã£¬µÚ¶ş¸öÖ¸ÕëÏÈÏòÇ°ÒÆ¶¯k-1Î»£¬È»ºóµÚÒ»¸öÖ¸ÕëºÍµÚ¶ş¸öÖ¸ÕëÍ¬Ê±¿ªÊ¼ÏòÇ°ÒÆ¶¯£¬ÖªµÀµÚ¶ş¸öÖ¸ÕëÒÆ¶¯µ½Î²½áµã£¬ÔòµÚÒ»¸öÖ¸ÕëËùÖ¸ÏòµÄÔªËØ¾ÍÊÇµ¹ÊıµÚk¸ö½áµã
-	 * ×¢Òâ£ºÕâÀïÓÉÓÚ×ÅÖØÓÚ¿¼ÂÇÖ»±éÀúÒ»´ÎÁ´±í£¬ËùÒÔÈç¹ûk´óÓÚlength£¬Ôò·µ»ØÊ×½áµã
+	 * è§£é¢˜æ€è·¯2ï¼šå®šä¹‰ä¸¤ä¸ªæŒ‡é’ˆéƒ½æŒ‡å‘é¦–ç»“ç‚¹ï¼Œç¬¬äºŒä¸ªæŒ‡é’ˆå…ˆå‘å‰ç§»åŠ¨k-1ä½ï¼Œç„¶åç¬¬ä¸€ä¸ªæŒ‡é’ˆå’Œç¬¬äºŒä¸ªæŒ‡é’ˆåŒæ—¶å¼€å§‹å‘å‰ç§»åŠ¨ï¼ŒçŸ¥é“ç¬¬äºŒä¸ªæŒ‡é’ˆç§»åŠ¨åˆ°å°¾ç»“ç‚¹ï¼Œåˆ™ç¬¬ä¸€ä¸ªæŒ‡é’ˆæ‰€æŒ‡å‘çš„å…ƒç´ å°±æ˜¯å€’æ•°ç¬¬kä¸ªç»“ç‚¹
+	 * æ³¨æ„ï¼šè¿™é‡Œç”±äºç€é‡äºè€ƒè™‘åªéå†ä¸€æ¬¡é“¾è¡¨ï¼Œæ‰€ä»¥å¦‚æœkå¤§äºlengthï¼Œåˆ™è¿”å›é¦–ç»“ç‚¹
 	 *
 	 * @param head
-	 *            Òª´òÓ¡µÄÁ´±í
+	 *            è¦æ‰“å°çš„é“¾è¡¨
 	 * @param k
-	 *            µ¹ÊıµÚ¼¸¸ö½áµã
-	 * @return µ¹ÊıµÄ¸Ã½áµã
+	 *            å€’æ•°ç¬¬å‡ ä¸ªç»“ç‚¹
+	 * @return å€’æ•°çš„è¯¥ç»“ç‚¹
 	 */
 	public ListNode printKthToTail2(ListNode head, int k) {
 		if (head == null || head.m_pNext == null) {
 			return head;
 		}
 		if (k <= 0) {
-			throw new RuntimeException("k²»ÄÜĞ¡ÓÚµÈÓÚ0");
+			throw new RuntimeException("kä¸èƒ½å°äºç­‰äº0");
 		}
 
 		ListNode node1 = head;
 		ListNode node2 = head;
-		// ±íÊ¾µ±Ç°µÄ½áµãÊı
+		// è¡¨ç¤ºå½“å‰çš„ç»“ç‚¹æ•°
 		int index = 0;
 		while (node2.m_pNext != null) {
 			if (index < k - 1) {
@@ -135,10 +135,10 @@ public class KthNodeFromEnd {
 }
 
 /**
- * ×Ô¶¨ÒåµÄÁ´±íÀà
+ * è‡ªå®šä¹‰çš„é“¾è¡¨ç±»
  *
  * @author zhangcanlong
- * @date 2018Äê10ÔÂ15ÈÕ
+ * @date 2018å¹´10æœˆ15æ—¥
  */
 class ListNode {
 	int m_nvalue;

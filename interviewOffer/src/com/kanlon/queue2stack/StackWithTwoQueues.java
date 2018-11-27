@@ -4,14 +4,14 @@ import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
- * ÓÃÁ½¸ö¶ÓÁĞÊµÏÖÒ»¸öÕ»
+ * ç”¨ä¸¤ä¸ªé˜Ÿåˆ—å®ç°ä¸€ä¸ªæ ˆ
  *
  * @author zhangcanlong
- * @date 2018Äê9ÔÂ28ÈÕ
+ * @date 2018å¹´9æœˆ28æ—¥
  */
 public class StackWithTwoQueues {
 	public static void main(String[] args) {
-		// ²âÊÔ
+		// æµ‹è¯•
 		Cstack<Integer> stack = new Cstack<>();
 		stack.push(1);
 		stack.push(2);
@@ -27,18 +27,18 @@ public class StackWithTwoQueues {
 }
 
 /**
- * ÓÃÁ½¸ö¶ÓÁĞÊµÏÖµÄÒ»¸öÕ»£¬½âÌâË¼Â·£ºÈëÕ»Ê±£¬Ïò¶ÓÁĞ1Ìí¼ÓÔªËØ£¬³öÕ»Ê±£¬ÏÈÅĞ¶Ï¶ÓÁĞ1µÄÔªËØÊÇ·ñÎªnull£¬Èç¹û²»ÎªnullÔò½«¶ÓÁĞ1ÔªËØ³ö¶Óµ½¶ÓÁĞ2ÖĞÖªµÀ¶ÓÁĞ1ÖĞÊ£ÏÂ1¸öÊ±£¬Ôò½«Æä³öÕ»¡£
- * Èç¹û¶ÓÁĞ1µÄÔªËØÎªnull£¬Ôò¼ì²é¶ÓÁĞ2ÖĞµÄÔªËØÊÇ·ñÎªnull£¬Èç¹û²»ÎªnullÔò½«¶ÓÁĞ2ÖĞµÄÔªËØ³ö¶Óµ½¶ÓÁĞ1ÖĞ£¬Ö±µ½Ê£ÏÂÒ»¸öÊ±£¬½«Æä³öÕ»£¬Èç¹û¶ÓÁĞ2Ò²Îªnull£¬±íÊ¾Õ»Ã»ÓĞÔªËØÁË
+ * ç”¨ä¸¤ä¸ªé˜Ÿåˆ—å®ç°çš„ä¸€ä¸ªæ ˆï¼Œè§£é¢˜æ€è·¯ï¼šå…¥æ ˆæ—¶ï¼Œå‘é˜Ÿåˆ—1æ·»åŠ å…ƒç´ ï¼Œå‡ºæ ˆæ—¶ï¼Œå…ˆåˆ¤æ–­é˜Ÿåˆ—1çš„å…ƒç´ æ˜¯å¦ä¸ºnullï¼Œå¦‚æœä¸ä¸ºnullåˆ™å°†é˜Ÿåˆ—1å…ƒç´ å‡ºé˜Ÿåˆ°é˜Ÿåˆ—2ä¸­çŸ¥é“é˜Ÿåˆ—1ä¸­å‰©ä¸‹1ä¸ªæ—¶ï¼Œåˆ™å°†å…¶å‡ºæ ˆã€‚
+ * å¦‚æœé˜Ÿåˆ—1çš„å…ƒç´ ä¸ºnullï¼Œåˆ™æ£€æŸ¥é˜Ÿåˆ—2ä¸­çš„å…ƒç´ æ˜¯å¦ä¸ºnullï¼Œå¦‚æœä¸ä¸ºnullåˆ™å°†é˜Ÿåˆ—2ä¸­çš„å…ƒç´ å‡ºé˜Ÿåˆ°é˜Ÿåˆ—1ä¸­ï¼Œç›´åˆ°å‰©ä¸‹ä¸€ä¸ªæ—¶ï¼Œå°†å…¶å‡ºæ ˆï¼Œå¦‚æœé˜Ÿåˆ—2ä¹Ÿä¸ºnullï¼Œè¡¨ç¤ºæ ˆæ²¡æœ‰å…ƒç´ äº†
  *
  * @author zhangcanlong
- * @date 2018Äê9ÔÂ28ÈÕ
+ * @date 2018å¹´9æœˆ28æ—¥
  */
 class Cstack<T> {
 	private Queue<T> queue1 = new LinkedBlockingQueue<>();
 	private Queue<T> queue2 = new LinkedBlockingQueue<>();
 
 	/**
-	 * ÈëÕ»
+	 * å…¥æ ˆ
 	 *
 	 * @param element
 	 */
@@ -47,9 +47,9 @@ class Cstack<T> {
 	}
 
 	/**
-	 * ³öÕ»
+	 * å‡ºæ ˆ
 	 *
-	 * @return ·µ»Ø³öÕ»µÄÔªËØ
+	 * @return è¿”å›å‡ºæ ˆçš„å…ƒç´ 
 	 */
 	public T pop() {
 		if (queue1.size() > 0) {
@@ -64,7 +64,7 @@ class Cstack<T> {
 			}
 			return queue2.poll();
 		}
-		throw new RuntimeException("³öÕ»´íÎó£¬ÒÑ¾­Ã»ÓĞÔªËØÁË");
+		throw new RuntimeException("å‡ºæ ˆé”™è¯¯ï¼Œå·²ç»æ²¡æœ‰å…ƒç´ äº†");
 
 	}
 

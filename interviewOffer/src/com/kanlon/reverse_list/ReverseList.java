@@ -3,12 +3,12 @@ package com.kanlon.reverse_list;
 import java.util.Stack;
 
 /**
- * ÃæÊÔÌâ16£º·´×ªÁ´±í
+ * é¢è¯•é¢˜16ï¼šåè½¬é“¾è¡¨
  * <p>
- * ¶¨ÒåÒ»¸öº¯Êı£¬ÊäÈëÒ»¸öÁ´±íµÄÍ·½áµã£¬·´×ª¸ÃÁ´±í²¢Êä³ö·´×ªºóÁ´±íµÄÍ·½áµã¡£
+ * å®šä¹‰ä¸€ä¸ªå‡½æ•°ï¼Œè¾“å…¥ä¸€ä¸ªé“¾è¡¨çš„å¤´ç»“ç‚¹ï¼Œåè½¬è¯¥é“¾è¡¨å¹¶è¾“å‡ºåè½¬åé“¾è¡¨çš„å¤´ç»“ç‚¹ã€‚
  *
  * @author zhangcanlong
- * @date 2018Äê10ÔÂ24ÈÕ
+ * @date 2018å¹´10æœˆ24æ—¥
  */
 public class ReverseList {
 
@@ -24,27 +24,27 @@ public class ReverseList {
 		node1.m_pNext = node2;
 		node2.m_pNext = node3;
 		node3.m_pNext = node4;
-		// ²âÊÔ
+		// æµ‹è¯•
 		ReverseList test = new ReverseList();
 		System.out.println(node1);
-		// ¹¦ÄÜ²âÊÔ£¨ÊäÈëµÄÁ´±íÓĞ¶à¸öÁ´±í£©
-		// System.out.println("·½·¨Ò»£º" + test.reverseList(node1));
-		// System.out.println("·½·¨¶ş£º" + test.reverseList2(node1));
-		// ÌØÊâ²âÊÔ£¨ÊäÈëµÄÁ´±íµÄÖ»ÓĞÒ»¸ö½áµã£©
-		// System.out.println("·½·¨Ò»£º" + test.reverseList(node4));
-		// System.out.println("·½·¨¶ş£º" + test.reverseList2(node4));
-		// ÌØÊâ²âÊÔ£¨ÊäÈëµÃµ½Á´±íÖ¸ÕëÊÇnull£©
-		// System.out.println("·½·¨Ò»£º" + test.reverseList(null));
-		// System.out.println("·½·¨¶ş£º" + test.reverseList2(null));
+		// åŠŸèƒ½æµ‹è¯•ï¼ˆè¾“å…¥çš„é“¾è¡¨æœ‰å¤šä¸ªé“¾è¡¨ï¼‰
+		// System.out.println("æ–¹æ³•ä¸€ï¼š" + test.reverseList(node1));
+		// System.out.println("æ–¹æ³•äºŒï¼š" + test.reverseList2(node1));
+		// ç‰¹æ®Šæµ‹è¯•ï¼ˆè¾“å…¥çš„é“¾è¡¨çš„åªæœ‰ä¸€ä¸ªç»“ç‚¹ï¼‰
+		// System.out.println("æ–¹æ³•ä¸€ï¼š" + test.reverseList(node4));
+		// System.out.println("æ–¹æ³•äºŒï¼š" + test.reverseList2(node4));
+		// ç‰¹æ®Šæµ‹è¯•ï¼ˆè¾“å…¥å¾—åˆ°é“¾è¡¨æŒ‡é’ˆæ˜¯nullï¼‰
+		// System.out.println("æ–¹æ³•ä¸€ï¼š" + test.reverseList(null));
+		// System.out.println("æ–¹æ³•äºŒï¼š" + test.reverseList2(null));
 
 	}
 
 	/**
-	 * ½âÌâË¼Â·1£¨²»Ì«ºÃ£©£º½«Á´±íÒÀ´Î·ÅÈëÕ»ÖĞ£¬È»ºóÔÙ½«Æäµ¯³ö£¬½«ÆäÁ¬½Óµ½ÏÂÒ»¸öµ¯³öµÄ½áµã
+	 * è§£é¢˜æ€è·¯1ï¼ˆä¸å¤ªå¥½ï¼‰ï¼šå°†é“¾è¡¨ä¾æ¬¡æ”¾å…¥æ ˆä¸­ï¼Œç„¶åå†å°†å…¶å¼¹å‡ºï¼Œå°†å…¶è¿æ¥åˆ°ä¸‹ä¸€ä¸ªå¼¹å‡ºçš„ç»“ç‚¹
 	 *
 	 * @param head
-	 *            Òª·´×ªµÄÁ´±íµÄÍ·½áµã
-	 * @return ·µ»Ø·µ»Ø·´×ªµÄºóµÄÁ´±íµÄÍ·½áµã
+	 *            è¦åè½¬çš„é“¾è¡¨çš„å¤´ç»“ç‚¹
+	 * @return è¿”å›è¿”å›åè½¬çš„åçš„é“¾è¡¨çš„å¤´ç»“ç‚¹
 	 */
 	public ListNode reverseList(ListNode head) {
 		if (head == null || head.m_pNext == null) {
@@ -68,29 +68,29 @@ public class ReverseList {
 	}
 
 	/**
-	 * ½âÌâË¼Â·2£¨ÍÆ¼ö£©£ºÖ±½Ó±éÀúÁ´±íÒ»±é£¬½«µ±Ç°±éÀúµÄ½áµã£¬Ö¸ÏòÉÏÒ»¸ö½áµã£¨Ö®ËùÒÔÒªÖ¸ÏòÉÏÒ»¸ö½áµã£¬²»ÊÇÏÂ¸ö½áµãÖ¸Ïòµ±Ç°½áµã£¬ÊÇÒòÎªÏÂ¸ö½áµãÒªÁô×Å×ö±éÀú£©£¬Ö±µ½µ±Ç°½áµãÎªnull£¬ĞèÒªÊ¹ÓÃÒ»¸öÁÙÊ±½áµã´æ´¢ÉÏÒ»¸ö½áµã£¬²»È»»á²Ù³ÉÁ´±í¶ÏÁÑ
+	 * è§£é¢˜æ€è·¯2ï¼ˆæ¨èï¼‰ï¼šç›´æ¥éå†é“¾è¡¨ä¸€éï¼Œå°†å½“å‰éå†çš„ç»“ç‚¹ï¼ŒæŒ‡å‘ä¸Šä¸€ä¸ªç»“ç‚¹ï¼ˆä¹‹æ‰€ä»¥è¦æŒ‡å‘ä¸Šä¸€ä¸ªç»“ç‚¹ï¼Œä¸æ˜¯ä¸‹ä¸ªç»“ç‚¹æŒ‡å‘å½“å‰ç»“ç‚¹ï¼Œæ˜¯å› ä¸ºä¸‹ä¸ªç»“ç‚¹è¦ç•™ç€åšéå†ï¼‰ï¼Œç›´åˆ°å½“å‰ç»“ç‚¹ä¸ºnullï¼Œéœ€è¦ä½¿ç”¨ä¸€ä¸ªä¸´æ—¶ç»“ç‚¹å­˜å‚¨ä¸Šä¸€ä¸ªç»“ç‚¹ï¼Œä¸ç„¶ä¼šæ“æˆé“¾è¡¨æ–­è£‚
 	 *
 	 * @param head
-	 *            Òª·´×ªµÄÁ´±íµÄÍ·½áµã
-	 * @return ·µ»Ø·´×ªºóµÄÁ´±íµÄÍ·µÄ½áµã
+	 *            è¦åè½¬çš„é“¾è¡¨çš„å¤´ç»“ç‚¹
+	 * @return è¿”å›åè½¬åçš„é“¾è¡¨çš„å¤´çš„ç»“ç‚¹
 	 */
 	public ListNode reverseList2(ListNode head) {
 		if (head == null || head.m_pNext == null) {
 			return head;
 		}
-		// ÓÃÀ´±£´æ·´×ªºóµÄÁ´±íµÄÍ·½áµã
+		// ç”¨æ¥ä¿å­˜åè½¬åçš„é“¾è¡¨çš„å¤´ç»“ç‚¹
 		ListNode reverseHead = head;
-		// ÓÃÓÚ±éÀú
+		// ç”¨äºéå†
 		ListNode tempNode = head;
-		// ÓÃÓÚ±£´æÉÏÒ»¸ö½áµã
+		// ç”¨äºä¿å­˜ä¸Šä¸€ä¸ªç»“ç‚¹
 		ListNode preNode = null;
 		while (tempNode != null) {
-			// ´æ´¢ÏÂÒ»¸ö½áµã
+			// å­˜å‚¨ä¸‹ä¸€ä¸ªç»“ç‚¹
 			ListNode pNext = tempNode.m_pNext;
 			if (tempNode.m_pNext == null) {
 				reverseHead = tempNode;
 			}
-			// Ö¸ÏòÇ°Ò»¸ö½áµã£¬Ê¹µÃÁ´±í¶ÏÁÑ£¬ËùÒÔÉÏÃæ´æ´¢µÄ½áµã£¬¾Í¿ÉÒÔ¼ÌĞø±éÀú
+			// æŒ‡å‘å‰ä¸€ä¸ªç»“ç‚¹ï¼Œä½¿å¾—é“¾è¡¨æ–­è£‚ï¼Œæ‰€ä»¥ä¸Šé¢å­˜å‚¨çš„ç»“ç‚¹ï¼Œå°±å¯ä»¥ç»§ç»­éå†
 			tempNode.m_pNext = preNode;
 			preNode = tempNode;
 			tempNode = pNext;
@@ -100,10 +100,10 @@ public class ReverseList {
 }
 
 /**
- * ×Ô¶¨ÒåµÄÁ´±íÀà
+ * è‡ªå®šä¹‰çš„é“¾è¡¨ç±»
  *
  * @author zhangcanlong
- * @date 2018Äê10ÔÂ15ÈÕ
+ * @date 2018å¹´10æœˆ15æ—¥
  */
 class ListNode {
 	int m_nvalue;
@@ -113,7 +113,7 @@ class ListNode {
 	public String toString() {
 		StringBuffer buffer = new StringBuffer("m_nvale:" + m_nvalue);
 		ListNode tempNode = m_pNext;
-		// Õâ¸ötoString²»ÄÜÓÃÓÚÑ­»·Á´±í
+		// è¿™ä¸ªtoStringä¸èƒ½ç”¨äºå¾ªç¯é“¾è¡¨
 		while (tempNode != null) {
 			buffer.append("->" + tempNode.m_nvalue);
 			tempNode = tempNode.m_pNext;

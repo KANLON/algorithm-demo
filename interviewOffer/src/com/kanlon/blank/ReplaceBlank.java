@@ -1,16 +1,16 @@
 package com.kanlon.blank;
 
 /**
- * ��Ŀ����ʵ��һ�����������ַ�����ÿ���ո��滻��"%20"���������롰We are happy.�����������We%20are%20happy.����
- * ��ʵ����Ӧ�ñ����ɣ����ַ������еĿո��滻Ϊ%20�������������ֳ������Ŀ����ı��ʡ�
+ * 题目：请实现一个函数，把字符串中每个空格替换成"%20"。例如输入“We are happy.”，则输出“We%20are%20happy.”。
+ * 其实这里应该表述成，把字符数组中的空格替换为%20。这样才能体现出这个题目问题的本质。
  *
  * @author zhangcanlong
- * @date 2018��9��22��
+ * @date 2018年9月22日
  */
 public class ReplaceBlank {
 
 	public static void main(String[] args) {
-		// ����
+		// 测试
 		String url1 = " We are happy.";
 		String url2 = " We are happy.  ";
 		String url3 = "Wearehappy.";
@@ -28,8 +28,8 @@ public class ReplaceBlank {
 	}
 
 	/**
-	 * ����˼·���ȱ�������һ�飬ͳ�ƿո�ĸ�����Ȼ�����滻����������Ĵ�С�����Ŷ���P1��P2����ָ�룬�ֱ�ָ��ԭʼ�ַ���ĩβ���滻֮����ַ�����ĩβ��
-	 * ������ǰ�ƶ�ָ��P1���������ָ����ַ����Ƶ�P2ָ���λ�ã�ֱ��������һ���ո�Ϊֹ��������һ���ո�֮�󣬰�P1��ǰ�ƶ�1����P2֮ǰ�����ַ���"%20"������"%20"�ĳ���Ϊ3��ͬʱҲҪ��P2��ǰ�ƶ�3��ֱ��P1==P2��
+	 * 解题思路，先遍历数组一遍，统计空格的个数，然后定义替换掉的新数组的大小，接着定义P1，P2两个指针，分别指向原始字符的末尾和替换之后的字符串的末尾。
+	 * 接着向前移动指针P1，逐个把它指向的字符复制到P2指向的位置，直到碰到第一个空格为止。遇到第一个空格之后，把P1向前移动1格，在P2之前插入字符串"%20"。由于"%20"的长度为3，同时也要把P2向前移动3格。直到P1==P2。
 	 *
 	 * @param urls
 	 * @return
@@ -39,7 +39,7 @@ public class ReplaceBlank {
 		int blankNum = 0;
 		int oldLength = urls.length;
 		int newLength = 0;
-		// ͳ�ƿո�����
+		// 统计空格数量
 		for (int i = 0; i < urls.length; i++) {
 			if (Character.isWhitespace(urls[i])) {
 				blankNum++;
@@ -50,14 +50,14 @@ public class ReplaceBlank {
 		}
 		newLength = oldLength + blankNum * 2;
 
-		// �滻���µ�����
+		// 替换后新的数组
 		char[] newUrls = new char[newLength];
 		System.arraycopy(urls, 0, newUrls, 0, urls.length);
 		urls = newUrls;
 
 		int p1 = oldLength - 1;
 		int p2 = newLength - 1;
-		// �滻�ո�
+		// 替换空格
 		while (p1 != p2) {
 			if (!Character.isWhitespace(urls[p1])) {
 				urls[p2] = urls[p1];

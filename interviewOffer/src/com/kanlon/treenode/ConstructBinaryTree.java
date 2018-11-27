@@ -3,29 +3,29 @@ package com.kanlon.treenode;
 import java.util.Arrays;
 
 /**
- * ÃæÊÔÌâ6£º¸ù¾İ¸ø³öµÄÏÈĞò±éÀúºÍÖĞĞò±éÀú£¬¹¹Ôì¶ş²æÊ÷£¬ÊäÈë¶ş²æÊ÷µÄ¸ù½Úµã
+ * é¢è¯•é¢˜6ï¼šæ ¹æ®ç»™å‡ºçš„å…ˆåºéå†å’Œä¸­åºéå†ï¼Œæ„é€ äºŒå‰æ ‘ï¼Œè¾“å…¥äºŒå‰æ ‘çš„æ ¹èŠ‚ç‚¹
  *
  * @author zhangcanlong
- * @date 2018Äê9ÔÂ26ÈÕ
+ * @date 2018å¹´9æœˆ26æ—¥
  */
 public class ConstructBinaryTree {
 	public static void main(String[] args) {
-		// 1¡¢²âÊÔÓÃÀı£¨ÆÕÍ¨¶ş²æÊ÷£©
+		// 1ã€æµ‹è¯•ç”¨ä¾‹ï¼ˆæ™®é€šäºŒå‰æ ‘ï¼‰
 		int[] preOrder = { 1, 2, 4, 7, 3, 5, 6, 8 };
 		int[] inOrder = { 4, 7, 2, 1, 5, 3, 8, 6 };
-		// 2¡¢²âÊÔÓÃÀı£¨ÌØÊâ¶ş²æÊ÷ ËùÓĞ½áµã¶¼Ã»ÓĞÓÒ×Ó½áµãµÄ¶ş²æÊ÷£©
+		// 2ã€æµ‹è¯•ç”¨ä¾‹ï¼ˆç‰¹æ®ŠäºŒå‰æ ‘ æ‰€æœ‰ç»“ç‚¹éƒ½æ²¡æœ‰å³å­ç»“ç‚¹çš„äºŒå‰æ ‘ï¼‰
 		// int[] preOrder = { 1, 2, 4 };
 		// int[] inOrder = { 4, 2, 1 };
-		// 3¡¢²âÊÔÓÃÀı£¨ÌØÊâ¶ş²æÊ÷ ËùÓĞ½áµã¶¼Ã»ÓĞ×ó×Ó½áµãµÄ¶ş²æÊ÷£©
+		// 3ã€æµ‹è¯•ç”¨ä¾‹ï¼ˆç‰¹æ®ŠäºŒå‰æ ‘ æ‰€æœ‰ç»“ç‚¹éƒ½æ²¡æœ‰å·¦å­ç»“ç‚¹çš„äºŒå‰æ ‘ï¼‰
 		// int[] preOrder = { 1, 3, 6 };
 		// int[] inOrder = { 1, 3, 6 };
-		// 4¡¢²âÊÔÓÃÀı£¨Ö»ÓĞÒ»¸ö½áµãµÄ¶ş²æÊ÷£©
+		// 4ã€æµ‹è¯•ç”¨ä¾‹ï¼ˆåªæœ‰ä¸€ä¸ªç»“ç‚¹çš„äºŒå‰æ ‘ï¼‰
 		// int[] preOrder = { 1 };
 		// int[] inOrder = { 1 };
-		// 5¡¢²âÊÔÓÃÀı£¨¶ş²æÊ÷µÄ¸ú½áµãÖ¸ÕëÎªnull£©
+		// 5ã€æµ‹è¯•ç”¨ä¾‹ï¼ˆäºŒå‰æ ‘çš„è·Ÿç»“ç‚¹æŒ‡é’ˆä¸ºnullï¼‰
 		// int[] preOrder = {};
 		// int[] inOrder = {};
-		// 6¡¢²âÊÔÓÃÀı£¨ÊäÈëµÄÇ°Ğò±éÀúĞòÁĞºÍÖĞĞò±éÀúĞòÁĞ²»Æ¥Åä£©
+		// 6ã€æµ‹è¯•ç”¨ä¾‹ï¼ˆè¾“å…¥çš„å‰åºéå†åºåˆ—å’Œä¸­åºéå†åºåˆ—ä¸åŒ¹é…ï¼‰
 		// int[] preOrder = { 1, 2, 4, 7, 3, 5, 6, 8 };
 		// int[] inOrder = { 5, 3, 6, 8, 1, 4, 7, 2, };
 
@@ -34,23 +34,23 @@ public class ConstructBinaryTree {
 		}
 		ConstructBinaryTree tree = new ConstructBinaryTree();
 		BinaryTreeNode root = tree.constructCore(preOrder, inOrder, inOrder.length);
-		// ÔÚ´Ë´¦debug¾Í¿ÉÒÔ¿´µ½rootµÄ½á¹¹
+		// åœ¨æ­¤å¤„debugå°±å¯ä»¥çœ‹åˆ°rootçš„ç»“æ„
 		System.out.println(root);
 	}
 
 	/**
-	 * ½âÌâË¼Â·£ºÔÚº¯ÊıConstructCoreÖĞ£¬ÎÒÃÇÏÈ¸ù¾İÇ°Ğò±éÀúµÄµÚÒ»¸öÊı×Ö´´½¨¸ú½Úµã£¬½ÓÏÂÀ´ÔÚÖĞĞò±éÀúĞòÁĞÖĞÕÒµ½¸ù½ÚµãµÄÎ»ÖÃ£¬
-	 * ÕâÑù¾ÍÄÜÈ·¶¨×ó¡¢ÓÒ×ÓÊ÷½áµãµÄÊıÁ¿¡£ÔÚÇ°Ğò±éÀúºÍÖĞĞò±éÀúµÄĞòÁĞÖĞ»®·ÖÁË×ó¡¢ÓÒ×ÓÊı½áµãµÄÖµÖ®ºó£¬ÎÒÃÇ¾Í¿ÉÒÔµİ¹éµØµ÷ÓÃº¯ÊıConstructCoreÈ¥·Ö±ğ¹¹½¨ËûËüµÄ×óÓÒ×ÓÊ÷
+	 * è§£é¢˜æ€è·¯ï¼šåœ¨å‡½æ•°ConstructCoreä¸­ï¼Œæˆ‘ä»¬å…ˆæ ¹æ®å‰åºéå†çš„ç¬¬ä¸€ä¸ªæ•°å­—åˆ›å»ºè·ŸèŠ‚ç‚¹ï¼Œæ¥ä¸‹æ¥åœ¨ä¸­åºéå†åºåˆ—ä¸­æ‰¾åˆ°æ ¹èŠ‚ç‚¹çš„ä½ç½®ï¼Œ
+	 * è¿™æ ·å°±èƒ½ç¡®å®šå·¦ã€å³å­æ ‘ç»“ç‚¹çš„æ•°é‡ã€‚åœ¨å‰åºéå†å’Œä¸­åºéå†çš„åºåˆ—ä¸­åˆ’åˆ†äº†å·¦ã€å³å­æ•°ç»“ç‚¹çš„å€¼ä¹‹åï¼Œæˆ‘ä»¬å°±å¯ä»¥é€’å½’åœ°è°ƒç”¨å‡½æ•°ConstructCoreå»åˆ†åˆ«æ„å»ºä»–å®ƒçš„å·¦å³å­æ ‘
 	 *
 	 * @return
 	 */
 	public BinaryTreeNode constructCore(int[] preOrder, int[] inOrder, int length) {
 
-		// ÅĞ¶ÏÊäÈëµÄÏÈĞòÓëÖĞĞò±éÀúÊÇ·ñº¬ÓĞÏàÍ¬µÄÔªËØ
+		// åˆ¤æ–­è¾“å…¥çš„å…ˆåºä¸ä¸­åºéå†æ˜¯å¦å«æœ‰ç›¸åŒçš„å…ƒç´ 
 		if (!arrayEquals(preOrder, inOrder)) {
-			throw new RuntimeException("ÊäÈëµÄÏÈĞò±éÀúºÍºóĞò±éÀú²»Ò»ÖÂ£¡£¡£¡");
+			throw new RuntimeException("è¾“å…¥çš„å…ˆåºéå†å’Œååºéå†ä¸ä¸€è‡´ï¼ï¼ï¼");
 		}
-		// Èç¹ûÃ»ÓĞÔªËØÊ±£¬µİ¹é½áÊø
+		// å¦‚æœæ²¡æœ‰å…ƒç´ æ—¶ï¼Œé€’å½’ç»“æŸ
 		if (preOrder == null || inOrder == null || length == 0) {
 			return null;
 		}
@@ -60,7 +60,7 @@ public class ConstructBinaryTree {
 		int leftNum = 0;
 		int rightNum = 0;
 
-		// ÔÚÖĞĞò±éÀúÖĞÕÒµ½¸ù½ÚµãµÄÖµ£¬È·¶¨×óÓÒ×ÓÊ÷µÄ½áµãµÄÊıÁ¿
+		// åœ¨ä¸­åºéå†ä¸­æ‰¾åˆ°æ ¹èŠ‚ç‚¹çš„å€¼ï¼Œç¡®å®šå·¦å³å­æ ‘çš„ç»“ç‚¹çš„æ•°é‡
 		for (int i = 0; i < inOrder.length; i++) {
 			if (inOrder[i] == preOrder[0]) {
 				break;
@@ -69,16 +69,16 @@ public class ConstructBinaryTree {
 		}
 		rightNum = inOrder.length - leftNum - 1;
 
-		// ¹¹½¨×ó×ÓÊ÷
+		// æ„å»ºå·¦å­æ ‘
 		if (leftNum > 0) {
-			// ÕâÀïµÄcopyOfRange·½·¨ÊÇËãÇ°²»Ëãºó
+			// è¿™é‡Œçš„copyOfRangeæ–¹æ³•æ˜¯ç®—å‰ä¸ç®—å
 			int[] preOrderChild = Arrays.copyOfRange(preOrder, 1, leftNum + 1);
 			int[] inOrderChild = Arrays.copyOfRange(inOrder, 0, leftNum);
 			root.m_pLeft = constructCore(preOrderChild, inOrderChild, length);
 		}
-		// ¹¹½¨ÓÒ×ÓÊ÷
+		// æ„å»ºå³å­æ ‘
 		if (rightNum > 0) {
-			// ÕâÀïµÄcopyOfRange·½·¨ÊÇËãÇ°²»Ëãºó
+			// è¿™é‡Œçš„copyOfRangeæ–¹æ³•æ˜¯ç®—å‰ä¸ç®—å
 			int[] preOrderChild = Arrays.copyOfRange(preOrder, leftNum + 1, preOrder.length);
 			int[] inOrderChild = Arrays.copyOfRange(inOrder, leftNum + 1, inOrder.length);
 			root.m_pRight = constructCore(preOrderChild, inOrderChild, length);
@@ -88,7 +88,7 @@ public class ConstructBinaryTree {
 	}
 
 	/**
-	 * ÅĞ¶ÏÁ½¸öÊı×éÖĞµÄËùÓĞÔªËØÊÇ·ñÏàµÈ£¬ÏàµÈÔò·µ»Øtrue£¬²»µÈÔò·µ»Øfalse
+	 * åˆ¤æ–­ä¸¤ä¸ªæ•°ç»„ä¸­çš„æ‰€æœ‰å…ƒç´ æ˜¯å¦ç›¸ç­‰ï¼Œç›¸ç­‰åˆ™è¿”å›trueï¼Œä¸ç­‰åˆ™è¿”å›false
 	 *
 	 * @param firstInts
 	 * @param secondInts
@@ -108,14 +108,14 @@ public class ConstructBinaryTree {
 			return false;
 		}
 		int num = 0;
-		// Ê×ÏÈ¶ÔÁ½¸öÊı×éËùÓĞÔªËØ½øĞĞÒì»òÔËËã£¬²»µÈÓÚ0£¬Ôò·µ»Ø£¬Èç¹ûµÈÓÚÔò½øĞĞÅÅĞòºóÔÙ±È½Ï
+		// é¦–å…ˆå¯¹ä¸¤ä¸ªæ•°ç»„æ‰€æœ‰å…ƒç´ è¿›è¡Œå¼‚æˆ–è¿ç®—ï¼Œä¸ç­‰äº0ï¼Œåˆ™è¿”å›ï¼Œå¦‚æœç­‰äºåˆ™è¿›è¡Œæ’åºåå†æ¯”è¾ƒ
 		for (int i = 0; i < firstInts.length; i++) {
 			num ^= firstInts[i] ^ secondInts[i];
 		}
 		if (num != 0) {
 			return false;
 		}
-		// ÎªÁË·ÀÖ¹¸Ä±äÔ­À´µÄÊı×é
+		// ä¸ºäº†é˜²æ­¢æ”¹å˜åŸæ¥çš„æ•°ç»„
 		int[] ints1 = Arrays.copyOf(firstInts, firstInts.length);
 		int[] ints2 = Arrays.copyOf(secondInts, secondInts.length);
 		Arrays.sort(ints1);
@@ -131,10 +131,10 @@ public class ConstructBinaryTree {
 }
 
 /**
- * ¶ş²æÊ÷Àà
+ * äºŒå‰æ ‘ç±»
  *
  * @author zhangcanlong
- * @date 2018Äê9ÔÂ27ÈÕ
+ * @date 2018å¹´9æœˆ27æ—¥
  */
 class BinaryTreeNode {
 	int m_nValue;

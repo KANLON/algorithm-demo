@@ -1,19 +1,19 @@
 package com.kanlon.numof1inbinary;
 
 /**
- * ͳ�ƶ�����1�еĸ�������չ��Ŀ��
+ * 统计二进制1中的个数的拓展题目。
  * <p>
- * ��һ��������ȥ1֮���ٺ�ԭ����������λ�����㣬�õ��Ľ���൱���ǰ������Ķ����Ʊ�ʾ�е����ұ�һ��1���0.�����Ķ����Ƶ����ⶼ���������˼·�����
+ * 把一个整数减去1之后再和原来的整数做位与运算，得到的结果相当于是把整数的二进制表示中的最右边一个1变成0.这样的二进制的问题都可以用这个思路解决。
  *
  * @author zhangcanlong
- * @date 2018��10��6��
+ * @date 2018年10月6日
  */
 public class NumberOf1InBinaryExt {
 
 	public static void main(String[] args) {
 
 		NumberOf1InBinaryExt ext = new NumberOf1InBinaryExt();
-		// ������Ŀ1
+		// 测试题目1
 		int n0 = 0;
 		int n1 = 1;
 		int n2 = 8;
@@ -21,7 +21,7 @@ public class NumberOf1InBinaryExt {
 		System.out.println(ext.judgeIs2Power(n1));
 		System.out.println(ext.judgeIs2Power(n2));
 
-		// ������Ŀ2
+		// 测试题目2
 		int num1 = 10;
 		int num2 = 13;
 		System.out.println(ext.m2n(num1, num2));
@@ -29,12 +29,12 @@ public class NumberOf1InBinaryExt {
 	}
 
 	/**
-	 * ��չ��Ŀ1����һ������ж�һ�������ǲ���2�������η���
+	 * 拓展题目1：用一条语句判断一个整数是不是2的整数次方。
 	 * <p>
-	 * ����˼·��һ�����������2�������η�����ô���Ķ����Ʊ�ʾ������ֻ��һλ��1������������λ����0.����ǰ��ķ����������������ȥ1֮���ٺ����Լ��������㣬���������Ψһ��1�ͻ���0.
+	 * 解题思路：一个整数如果是2的整数次方，那么它的二进制表示中有且只有一位是1，而其他所有位都是0.根据前面的分析，把这个整数减去1之后再和它自己做与运算，这个整数中唯一的1就会变成0.
 	 *
 	 * @param n
-	 *            Ҫ�жϵ���
+	 *            要判断的数
 	 * @return
 	 */
 	public boolean judgeIs2Power(int n) {
@@ -42,10 +42,10 @@ public class NumberOf1InBinaryExt {
 	}
 
 	/**
-	 * ��չ��Ŀ2��������������m��n��������Ҫ�ı�m�Ķ����Ʊ�ʾ�е�
-	 * ����λ���ܵõ�n�����磺10�Ķ����Ʊ�ʾΪ1010,13�Ķ����Ʊ�ʾΪ1101����Ҫ�ı�1010�е�3λ���ܵõ�1101.
+	 * 拓展题目2：输入两个整数m和n，计算需要改变m的二进制表示中的
+	 * 多少位才能得到n。比如：10的二进制表示为1010,13的二进制表示为1101，需要改变1010中的3位才能得到1101.
 	 * <p>
-	 * ����˼·����һ����������������򣬵ڶ���ͳ���������1�ĸ���
+	 * 解题思路：第一步求这两个数的异或，第二部统计异或结果中1的个数
 	 *
 	 * @param m
 	 * @param n

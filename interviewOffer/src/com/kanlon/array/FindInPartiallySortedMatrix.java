@@ -1,9 +1,9 @@
 package com.kanlon.array;
 
 /**
- * ÌâÄ¿£ºÔÚÒ»¸ö¶þÎ¬Êý×éÖÐ£¬Ã¿Ò»ÐÐ¶¼°´ÕÕ´Ó×óµ½ÓÒµÝÔöµÄË³ÐòÅÅÐò£¬Ã¿Ò»ÁÐ¶¼°´ÕÕ´ÓÉÏµ½ÏÂµÝÔöµÄË³ÐòÅÅÐò¡£ÇëÍê³ÉÒ»¸öº¯Êý£¬ÊäÈëÕâÑùµÄÒ»¸ö¶þÎ¬Êý×éºÍÒ»¸öÕûÊý£¬ÅÐ¶ÏÊý×éÖÐÊÇ·ñº¬ÓÐ¸ÃÕûÊý¡£
+ * é¢˜ç›®ï¼šåœ¨ä¸€ä¸ªäºŒç»´æ•°ç»„ä¸­ï¼Œæ¯ä¸€è¡Œéƒ½æŒ‰ç…§ä»Žå·¦åˆ°å³é€’å¢žçš„é¡ºåºæŽ’åºï¼Œæ¯ä¸€åˆ—éƒ½æŒ‰ç…§ä»Žä¸Šåˆ°ä¸‹é€’å¢žçš„é¡ºåºæŽ’åºã€‚è¯·å®Œæˆä¸€ä¸ªå‡½æ•°ï¼Œè¾“å…¥è¿™æ ·çš„ä¸€ä¸ªäºŒç»´æ•°ç»„å’Œä¸€ä¸ªæ•´æ•°ï¼Œåˆ¤æ–­æ•°ç»„ä¸­æ˜¯å¦å«æœ‰è¯¥æ•´æ•°ã€‚
  * <p>
- * ÀýÈçÏÂÃæµÄ¶þÎ¬Êý×é¾ÍÊÇÃ¿ÐÐ¡¢Ã¿ÁÐ¶¼µÝÔöÅÅÐò¡£Èç¹ûÔÚÕâ¸öÊý×éÖÐ²éÕÒÊý×Ö7£¬Ôò·µ»Øtrue£»Èç¹û²éÕÒÊý×Ö5£¬ÓÉÓÚÊý×é²»º¬ÓÐ¸ÃÊý×Ö£¬Ôò·µ»Øfalse¡£
+ * ä¾‹å¦‚ä¸‹é¢çš„äºŒç»´æ•°ç»„å°±æ˜¯æ¯è¡Œã€æ¯åˆ—éƒ½é€’å¢žæŽ’åºã€‚å¦‚æžœåœ¨è¿™ä¸ªæ•°ç»„ä¸­æŸ¥æ‰¾æ•°å­—7ï¼Œåˆ™è¿”å›žtrueï¼›å¦‚æžœæŸ¥æ‰¾æ•°å­—5ï¼Œç”±äºŽæ•°ç»„ä¸å«æœ‰è¯¥æ•°å­—ï¼Œåˆ™è¿”å›žfalseã€‚
  * <p>
  * 1 2 8 9
  * <p>
@@ -13,10 +13,10 @@ package com.kanlon.array;
  * <p>
  * 6 8 11 15
  * <p>
- * ½âÌâË¼Â·£º´Ó½ÇÂä¿ªÊ¼²éÕÒ£¬Ê×ÏÈÑ¡È¡Êý×éÖÐÓÒÉÏ½ÇµÄÊý×Ö¡£Èç¹û¸ÃÊý×ÖµÈÓÚÒª²éÕÒµÄÊý×Ö£¬²éÕÒ¹ý³Ì½áÊø£»Èç¹û¸ÃÊý×Ö´óÓÚÒª²éÕÒµÄÊý×Ö£¬ÌÞ³ýÕâ¸öÊý×ÖËùÔÚµÄÁÐ£»Èç¹û¸ÃÊý×ÖÐ¡ÓÚÒª²éÕÒµÄÊý×Ö£¬ÌÞ³ýÕâ¸öÊý×ÖËùÔÚµÄÐÐ¡£
+ * è§£é¢˜æ€è·¯ï¼šä»Žè§’è½å¼€å§‹æŸ¥æ‰¾ï¼Œé¦–å…ˆé€‰å–æ•°ç»„ä¸­å³ä¸Šè§’çš„æ•°å­—ã€‚å¦‚æžœè¯¥æ•°å­—ç­‰äºŽè¦æŸ¥æ‰¾çš„æ•°å­—ï¼ŒæŸ¥æ‰¾è¿‡ç¨‹ç»“æŸï¼›å¦‚æžœè¯¥æ•°å­—å¤§äºŽè¦æŸ¥æ‰¾çš„æ•°å­—ï¼Œå‰”é™¤è¿™ä¸ªæ•°å­—æ‰€åœ¨çš„åˆ—ï¼›å¦‚æžœè¯¥æ•°å­—å°äºŽè¦æŸ¥æ‰¾çš„æ•°å­—ï¼Œå‰”é™¤è¿™ä¸ªæ•°å­—æ‰€åœ¨çš„è¡Œã€‚
  *
  * @author zhangcanlong
- * @date 2018Äê9ÔÂ21ÈÕ
+ * @date 2018å¹´9æœˆ21æ—¥
  */
 public class FindInPartiallySortedMatrix {
 	public static void main(String[] args) {
@@ -27,37 +27,37 @@ public class FindInPartiallySortedMatrix {
 	}
 
 	/**
-	 * ²éÕÒµÄ¶þÎ¬Êý×éÖÐµÄÄ³Ôª ËØ
+	 * æŸ¥æ‰¾çš„äºŒç»´æ•°ç»„ä¸­çš„æŸå…ƒ ç´ 
 	 *
 	 * @param matrix
-	 *            ¶þÎ¬Êý×é
+	 *            äºŒç»´æ•°ç»„
 	 * @param rows
-	 *            ¶þÎ¬Êý×éµÄÐÐÊý
+	 *            äºŒç»´æ•°ç»„çš„è¡Œæ•°
 	 * @param columns
-	 *            ¶þÎ¬Êý×éµÄÁÐÊý
+	 *            äºŒç»´æ•°ç»„çš„åˆ—æ•°
 	 * @param number
-	 *            Òª²éÕÒµÄÔªËØ
+	 *            è¦æŸ¥æ‰¾çš„å…ƒç´ 
 	 * @return
 	 */
 	public Boolean find(int[][] matrix, int rows, int columns, int number) {
-		// ¶¨Òå³õÊ¼ÊÇ·ñÕÒµ½±ê×¢
+		// å®šä¹‰åˆå§‹æ˜¯å¦æ‰¾åˆ°æ ‡æ³¨
 		Boolean found = false;
 
-		// ÏÞÖÆÊäÈë´íÎó
+		// é™åˆ¶è¾“å…¥é”™è¯¯
 		if (matrix != null && rows > 0 && columns > 0) {
 			int row = 0;
 			int column = columns - 1;
-			// µ±»¹Ã»ÓÐ²éÕÒÍê
+			// å½“è¿˜æ²¡æœ‰æŸ¥æ‰¾å®Œ
 			while (row < rows && column >= 0) {
-				// Èç¹û¸ÃÐÐ¸ÃÁÐµÄÊý×ÖµÈÓÚÒª²éÕÒµÄÔªËØ£¬·µ»Ø
+				// å¦‚æžœè¯¥è¡Œè¯¥åˆ—çš„æ•°å­—ç­‰äºŽè¦æŸ¥æ‰¾çš„å…ƒç´ ï¼Œè¿”å›ž
 				if (matrix[row][column] == number) {
 					found = true;
 					break;
 				} else if (matrix[row][column] > number) {
-					// Èç¹û¸ÃÔªËØ´óÓÚÒª²éÕÒµÄÔªËØ£¬Ôò¼õÉÙ¸ÃÁÐ
+					// å¦‚æžœè¯¥å…ƒç´ å¤§äºŽè¦æŸ¥æ‰¾çš„å…ƒç´ ï¼Œåˆ™å‡å°‘è¯¥åˆ—
 					column--;
 				} else if (matrix[row][column] < number) {
-					// Èç¹û¸ÃÔªËØÐ¡ÓÚÒª²éÕÒµÄÔªËØ£¬Ôò¼õÉÙ¸ÃÐÐ£¬¼´Ôö¼Ó¸ÃÐÐºÅ
+					// å¦‚æžœè¯¥å…ƒç´ å°äºŽè¦æŸ¥æ‰¾çš„å…ƒç´ ï¼Œåˆ™å‡å°‘è¯¥è¡Œï¼Œå³å¢žåŠ è¯¥è¡Œå·
 					row++;
 				}
 			}

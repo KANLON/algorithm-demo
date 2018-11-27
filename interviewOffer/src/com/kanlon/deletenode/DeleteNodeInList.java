@@ -1,17 +1,17 @@
-package deletenode;
+package com.kanlon.deletenode;
 
 /**
- * ������13����O(1)ʱ��ɾ���������
+ * 面试题13：在O(1)时间删除链表结点
  * <p>
- * ��Ŀ����������������ͷָ���һ�����ָ�룬����һ��������O(1)ʱ��ɾ���ý�㡣��������뺯���Ķ������£�
+ * 题目：给定单向链表的头指针和一个结点指针，定义一个函数在O(1)时间删除该结点。链表结点与函数的定义如下：
  *
  * @author zhangcanlong
- * @date 2018��10��8��
+ * @date 2018年10月8日
  */
 public class DeleteNodeInList {
 	public static void main(String[] args) {
 		DeleteNodeInList test = new DeleteNodeInList();
-		// ��������������
+		// 定义多个结点的链表
 		ListNode listNode1 = new ListNode();
 		ListNode listNode2 = new ListNode();
 		ListNode listNode3 = new ListNode();
@@ -24,59 +24,59 @@ public class DeleteNodeInList {
 		listNode2.m_pNext = listNode3;
 		listNode3.m_pNext = listNode4;
 
-		// ����ֻ��һ����������
+		// 定义只有一个结点的链表
 		ListNode listNode5 = new ListNode();
 		listNode5.m_nValue = 5;
 
-		// �����￪ʼdebug
-		// ���ܲ��ԣ��Ӷ�������������м�ɾ��һ����㣩
+		// 在这里开始debug
+		// 功能测试（从多个结点的链表的中间删除一个结点）
 		test.deleteNode(listNode1, listNode2);
 		test.outNode(listNode1);
 
-		// ���ж������������ɾ��ͷ���
+		// 从有多个结点的链表中删除头结点
 		test.deleteNode(listNode1, listNode1);
 		test.outNode(listNode1);
 
-		// ���ж�һ�������е�ɾ��β���
+		// 从有多一个链表中的删除尾结点
 		test.deleteNode(listNode1, listNode4);
 		test.outNode(listNode1);
 
-		// ��ֻ��һ������������ɾ��Ψһ�Ľ��
+		// 从只有一个结点的链表中删除唯一的结点
 		listNode5 = test.deleteNode(listNode5, listNode5);
 		test.outNode(listNode5);
 
-		// ����������ԣ�ָ��������ͷ���ָ��Ϊnullָ�룬ָ��Ҫɾ���Ľ��Ϊnullָ�룩
+		// 特殊输入测试（指定链表的头结点指针为null指针，指向要删除的结点为null指针）
 		test.deleteNode(null, null);
 
 	}
 
 	/**
-	 * ����˼·�������ҪO(1)������ͨ�������ҵ��ýڵ��ǰ�ڵ����ɾ���ý�㣬��Ϊ������ʱ�临�ӶȻ���O(n)��
-	 * ���еķ���Ӧ���ǽ�Ҫɾ���Ľڵ����һ������ֵ��ֵΪҪɾ���Ľڵ㣬Ȼ�󽫸���һ�����ָ�����¸���㣬�Ӷ��ﵽɾ����Ч����
+	 * 解题思路：如果需要O(1)，则不能通过遍历找到该节点的前节点后，再删除该结点，因为这样的时间复杂度会是O(n)。
+	 * 可行的方法应该是将要删除的节点的下一个结点的值赋值为要删除的节点，然后将该下一个结点指向下下个结点，从而达到删除的效果。
 	 * <p>
-	 * ע�⣺1.���ǵ�Ҫɾ���Ľ�����λ��������β�������������ֻ��һ���������������
-	 * 2.�������������ʱ�临�Ӷ�����£����Ҫ��һ��Ҫɾ���Ľ���Ƿ����������
+	 * 注意：1.考虑到要删除的结点可能位于链表的尾部或输入的链表只有一个结点的特殊情况。
+	 * 2.还有如果不考虑时间复杂度情况下，最好要考一下要删除的结点是否存在链表中
 	 *
 	 * @param pListHead
-	 *            Ҫɾ����������ͷ
+	 *            要删除结点的链表头
 	 * @param pToBeDeleted
-	 *            Ҫɾ���Ľڵ�
+	 *            要删除的节点
 	 */
 	public ListNode deleteNode(ListNode pListHead, ListNode pToBeDeleted) {
-		// �������֮һΪnull����ֱ�ӷ���
+		// 如果两者之一为null，则直接返回
 		if (pListHead == null || pToBeDeleted == null) {
 			return null;
 		}
-		// ���Ҫɾ���Ľ�㲻��β���
+		// 如果要删除的结点不是尾结点
 		if (pToBeDeleted.m_pNext != null) {
 			pToBeDeleted.m_nValue = pToBeDeleted.m_pNext.m_nValue;
 			pToBeDeleted.m_pNext = pToBeDeleted.m_pNext.m_pNext;
-			// �������ֻ��һ�����
+			// 如果链表只有一个结点
 		} else if (pListHead == pToBeDeleted) {
-			// ��Ϊjava��ֵ���ݣ�ֱ�Ӹ���pListHead=null�ǲ�������
+			// 因为java是值传递，直接复制pListHead=null是不起作用
 			pListHead.m_nValue = null;
 		}
-		// �������ж����㣬����ɾ������β��㣨����Ҫ˳�������ǰһ�����ɾ����
+		// 链表中有多个结点，并且删除的是尾结点（则需要顺序查找其前一个结点删除）
 		else {
 			ListNode node = pListHead;
 			while (node.m_pNext != pToBeDeleted) {
@@ -84,19 +84,19 @@ public class DeleteNodeInList {
 			}
 			node.m_pNext = null;
 		}
-		// ��Ҫ���ӷ�������ͷ��㣬��Ȼ������ֻ��һ�����ʱ���޷�����null��ֵ
+		// 需要增加返回链表头结点，不然在链表只有一个结点时，无法返回null的值
 		return pListHead;
 	}
 
 	/**
-	 * ����������ֵ
+	 * 输入链表的值
 	 *
 	 * @param node
-	 *            ������ͷ���
+	 *            链表的头结点
 	 */
 	public void outNode(ListNode node) {
 		if (node == null) {
-			System.out.println("����Ϊnull");
+			System.out.println("链表为null");
 			return;
 		}
 		ListNode tempNode = node;

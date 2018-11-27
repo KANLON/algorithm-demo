@@ -4,17 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Singletonģʽ��ʵ�� ��Ŀ�����һ���࣬����ֻ�����ɸ����һ��ʵ����
+ * Singleton模式的实现 题目：设计一个类，我们只能生成该类的一个实例。
  *
  * @author zhangcanlong
- * @date 2018��9��16��
+ * @date 2018年9月16日
  */
 public class SingletonDemo {
 
 }
 
 /**
- * ����һ��ֻ�ʺϵ��̻߳����� ����final���η�����ֹ�û��̳и��࣬ʹ��clone�����������õ���ʵ������һ��ʵ����
+ * 方法一，只适合单线程环境。 加上final修饰符，防止用户继承该类，使用clone方法创建出该单例实例的另一个实例。
  */
 final class Singleton1 {
 	private Singleton1() {
@@ -31,7 +31,7 @@ final class Singleton1 {
 }
 
 /**
- * ����������Ȼ�ڶ��̻߳������ܹ�����������Ч�ʲ��ߣ���������ʽ�� ������final���η�����ֹ�û��̳и��࣬ʹ��clone�����������õ���ʵ������һ��ʵ��
+ * 方法二：虽然在多线程环境中能工作，但工作效率不高（初步饿汉式） 。加上final修饰符，防止用户继承该类，使用clone方法创建出该单例实例的另一个实例
  */
 final class Singleton2 {
 	private Singleton2() {
@@ -51,8 +51,8 @@ final class Singleton2 {
 }
 
 /**
- * �����������еĽⷨ����ͬ����ǰ�������ж�ʵ���Ƿ��Ѵ��ڣ���������ʽ���������ϸ���
- * ����final���η�����ֹ�û��̳и��࣬ʹ��clone�����������õ���ʵ������һ��ʵ��
+ * 方法三：可行的解法，加同步锁前后两次判断实例是否已存在（完整饿汉式），不过较复杂
+ * 加上final修饰符，防止用户继承该类，使用clone方法创建出该单例实例的另一个实例
  */
 final class Singleton3 {
 	private Singleton3() {
@@ -74,7 +74,7 @@ final class Singleton3 {
 }
 
 /**
- * �����ģ�����ʽ��һ�㿪��ʹ������� ����final���η�����ֹ�û��̳и��࣬ʹ��clone�����������õ���ʵ������һ��ʵ��
+ * 方法四：饱汉式，一般开发使用这个。 加上final修饰符，防止用户继承该类，使用clone方法创建出该单例实例的另一个实例
  */
 final class Singleton4 {
 	private Singleton4() {
@@ -88,13 +88,13 @@ final class Singleton4 {
 }
 
 /**
- * �����壺ʹ�����ڲ��ഴ��ʵ���� ����final���η�����ֹ�û��̳и��࣬ʹ��clone�����������õ���ʵ������һ��ʵ��
- * ʹ���ڲ�����Ա���������⣬��Ϊ�ڶ��̻߳����£�jvm��һ����ĳ�ʼ���������ƣ�
- * ͬһʱ��ֻ������һ���߳�ȥ��ʼ��һ���࣬�����ʹ��������������˴󲿷ֵ���ʵ�ֵ�����.
- * �ο����ӣ� https://blog.csdn.net/gavin_dyson/article/details/70145374
+ * 方法五：使用了内部类创建实例。 加上final修饰符，防止用户继承该类，使用clone方法创建出该单例实例的另一个实例
+ * 使用内部类可以避免这个问题，因为在多线程环境下，jvm对一个类的初始化会做限制，
+ * 同一时间只会允许一个线程去初始化一个类，这样就从虚拟机层面避免了大部分单例实现的问题.
+ * 参考链接： https://blog.csdn.net/gavin_dyson/article/details/70145374
  *
  * @author zhangcanlong
- * @date 2018��9��16��
+ * @date 2018年9月16日
  */
 final class Singleton5 {
 	private Singleton5() {
@@ -105,17 +105,17 @@ final class Singleton5 {
 	}
 
 	static class Nested {
-		// �����final��Ϊ�˷�ֹ�ڲ���������Ը��ǵ�
+		// 这里加final是为了防止内部将这个属性覆盖掉
 		private static final Singleton5 INSTANCE = new Singleton5();
 	}
 
 }
 
 /**
- * ��������ö��ʽ���� �����ַ��������ܽ�����߳�ͬ�����⣬�����ܷ�ֹ�����л����´����µĶ��󣬲�������jdk1.5�вż���enum���ԣ����Բ�����
+ * 方法六：枚举式单例 。这种方法不仅能解决多线程同步问题，而且能防止反序列化重新创建新的对象，不过由于jdk1.5中才加入enum特性，所以不常用
  *
  * @author zhangcanlong
- * @date 2018��9��18��
+ * @date 2018年9月18日
  */
 enum Singleton6 {
 	INSATANCE;
@@ -125,16 +125,16 @@ enum Singleton6 {
 }
 
 /**
- * �Ǽ�ʽ��spring IOC ����ʹ�ø÷���ʵ��
+ * 登记式，spring IOC 就是使用该方法实现
  *
  * @author zhangcanlong
- * @date 2018��9��18��
+ * @date 2018年9月18日
  */
 class RegSingleton {
-	// �Ǽǲ�������������е�ʵ��
+	// 登记簿，用来存放所有的实例
 	private static Map<String, RegSingleton> regSingletonMap = new HashMap<>();
 
-	// ������ص�ʱ������һ��ʵ�����Ǽǲ���
+	// 在类加载的时候添加一个实例到登记簿中
 	static {
 		RegSingleton regSingleton = new RegSingleton();
 		regSingletonMap.put(regSingleton.getClass().getName(), regSingleton);
@@ -142,7 +142,7 @@ class RegSingleton {
 	}
 
 	//
-	// ����Ĭ�ϵĹ��췽��
+	// 保护默认的构造方法
 	protected RegSingleton() {
 	}
 
