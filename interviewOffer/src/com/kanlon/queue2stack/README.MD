@@ -1,6 +1,6 @@
-### ������7��������ջʵ�ֶ���
-#### ��Ŀ��
-������ջʵ��һ�����С����е��������£�����ʵ��������������appendTail��deleteHead���ֱ�����ڶ���β����������ڶ���ͷ��ɾ�����Ĺ��ܡ�
+### 面试题7：用两个栈实现队列
+#### 题目：
+用两个栈实现一个队列。队列的声明如下，，请实现它的两个函数appendTail和deleteHead，分别完成在队列尾部插入结点和在队列头部删除结点的功能。
 ```
 class CQueue{
 	public CQueue(){};
@@ -12,21 +12,21 @@ class CQueue{
 }
 ```
 
-### ����˼·
-������ջʵ��һ�����С�ʵ��˼·�������Ӷ���Ԫ�ص�ʱ����ջ1���ӣ���ɾ������Ԫ�ص�ʱ���ȼ��ջ2�Ƿ�Ϊnull�����Ϊnull���ջ1��ջԪ�ؼ��뵽ջ2�У�֪��ʣ��һ��Ԫ��ʱ�����Ԫ��ʱ����Ҫɾ����Ԫ��,���ջ1ҲΪ�գ���ɾ��ʧ�ܣ��Ѿ�û��Ԫ�ء�
-�����ջ2��Ϊnullʱ�����ջ2��ջ��
+### 解题思路
+用两个栈实现一个队列。实现思路：当添加队列元素的时候，往栈1添加，当删除队列元素的时候，先检查栈2是否为null，如果为null则从栈1出栈元素加入到栈2中，知道剩下一个元素时，则该元素时队列要删除的元素,如果栈1也为空，则删除失败，已经没有元素。
+当检查栈2不为null时，则从栈2出栈。
 
 <img src='https://raw.githubusercontent.com/KANLON/algorithmDemo/master/image/queue_with_stacks.PNG'>
 
-��չ��
+拓展：
 
-#### ��Ŀ��
-����������ʵ��һ��ջ
+#### 题目：
+用两个队列实现一个栈
 
 
-### ����˼·
-����������ʵ�ֵ�һ��ջ������˼·����ջʱ�������1����Ԫ�أ���ջʱ�����ж϶���1��Ԫ���Ƿ�Ϊnull�������Ϊnull�򽫶���1Ԫ�س��ӵ�����2��֪������1��ʣ��1��ʱ�������ջ��
- �������1��Ԫ��Ϊnull���������2�е�Ԫ���Ƿ�Ϊnull�������Ϊnull�򽫶���2�е�Ԫ�س��ӵ�����1�У�ֱ��ʣ��һ��ʱ�������ջ���������2ҲΪnull����ʾջû��Ԫ����
+### 解题思路
+用两个队列实现的一个栈，解题思路：入栈时，向队列1添加元素，出栈时，先判断队列1的元素是否为null，如果不为null则将队列1元素出队到队列2中知道队列1中剩下1个时，则将其出栈。
+ 如果队列1的元素为null，则检查队列2中的元素是否为null，如果不为null则将队列2中的元素出队到队列1中，直到剩下一个时，将其出栈，如果队列2也为null，表示栈没有元素了
  
  <img src='https://raw.githubusercontent.com/KANLON/algorithmDemo/master/image/stack_with_queues.PNG'>
 

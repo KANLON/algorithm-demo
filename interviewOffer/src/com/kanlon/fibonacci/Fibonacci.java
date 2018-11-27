@@ -3,54 +3,54 @@ package com.kanlon.fibonacci;
 import java.security.InvalidParameterException;
 
 /**
- * ì³²¨ÄÇÆõÊıÁĞµÄÇó½â¡£ÌâÄ¿£ºĞ´Ò»¸öº¯Êı£¬ÊäÈën£¬Çóì³²¨ÄÇÆõ£¨Fibonacci£©ÊıÁĞµÄµÚnÏî¡£
- * ÌâÄ¿2£ºÒ»Ö»ÇàÍÜÒ»´Î¿ÉÒÔÌøÉÏ1¸öÌ¨½×£¬¿ÉÒÔÌøÉÏ2¼¶¡£Çó¸ÃÇàÍÜÌøÉÏÒ»¸ön¼¶µÄÌ¨½×¹²ÓĞ¶àÉÙÖÖÌø·¨¡£
+ * æ–æ³¢é‚£å¥‘æ•°åˆ—çš„æ±‚è§£ã€‚é¢˜ç›®ï¼šå†™ä¸€ä¸ªå‡½æ•°ï¼Œè¾“å…¥nï¼Œæ±‚æ–æ³¢é‚£å¥‘ï¼ˆFibonacciï¼‰æ•°åˆ—çš„ç¬¬né¡¹ã€‚
+ * é¢˜ç›®2ï¼šä¸€åªé’è›™ä¸€æ¬¡å¯ä»¥è·³ä¸Š1ä¸ªå°é˜¶ï¼Œå¯ä»¥è·³ä¸Š2çº§ã€‚æ±‚è¯¥é’è›™è·³ä¸Šä¸€ä¸ªnçº§çš„å°é˜¶å…±æœ‰å¤šå°‘ç§è·³æ³•ã€‚
  *
  * @author zhangcanlong
- * @date 2018Äê10ÔÂ5ÈÕ
+ * @date 2018å¹´10æœˆ5æ—¥
  */
 public class Fibonacci {
 
 	public static void main(String[] args) {
 		Fibonacci fi = new Fibonacci();
 		int[] testInts = new int[9];
-		// ²âÊÔÀı×Ó£¨¹¦ÄÜ²âÊÔ£©
+		// æµ‹è¯•ä¾‹å­ï¼ˆåŠŸèƒ½æµ‹è¯•ï¼‰
 		testInts[0] = 3;
 		testInts[1] = 5;
 		testInts[2] = 10;
-		// ±ß½çÖµ²âÊÔ
+		// è¾¹ç•Œå€¼æµ‹è¯•
 		testInts[3] = 0;
 		testInts[4] = 1;
 		testInts[5] = 2;
-		// ĞÔÄÜ²âÊÔ£¨ÊäÈë½Ï´óµÄÊı×Ö£©
+		// æ€§èƒ½æµ‹è¯•ï¼ˆè¾“å…¥è¾ƒå¤§çš„æ•°å­—ï¼‰
 		testInts[6] = 40;
-		// ÏÂÃæÁ½¸öÓÉÓÚÊ±¼äÌ«Âı£¬ËùÒÔÔİÊ±²»²âÊÔ
+		// ä¸‹é¢ä¸¤ä¸ªç”±äºæ—¶é—´å¤ªæ…¢ï¼Œæ‰€ä»¥æš‚æ—¶ä¸æµ‹è¯•
 		// testInts[7] = 50;
 		// testInts[8] = 100;
 		long startTime = System.currentTimeMillis();
 		for (int i = 0; i < testInts.length; i++) {
-			System.out.println("µİ¹é½â¾ö£º" + fi.nFibonacci(testInts[i]));
+			System.out.println("é€’å½’è§£å†³ï¼š" + fi.nFibonacci(testInts[i]));
 		}
 		long endTime1 = System.currentTimeMillis();
-		System.out.println("Ê±¼äÎª£º" + (endTime1 - startTime));
+		System.out.println("æ—¶é—´ä¸ºï¼š" + (endTime1 - startTime));
 
 		for (int i = 0; i < testInts.length; i++) {
-			System.out.println("Ñ­»·½â¾ö£º" + fi.nFibonacciWithLoop(testInts[i]));
+			System.out.println("å¾ªç¯è§£å†³ï¼š" + fi.nFibonacciWithLoop(testInts[i]));
 		}
-		System.out.println("Ê±¼äÎª£º" + (System.currentTimeMillis() - endTime1));
+		System.out.println("æ—¶é—´ä¸ºï¼š" + (System.currentTimeMillis() - endTime1));
 
 	}
 
 	/**
-	 * Çó½âË¼Â·Ò»£ºµİ¹é½â¾ö£¬²»¹ıĞ§ÂÊµÍ¡£ÒÔÇó½âf(10)ÎªÀı£¬Èç¹ûÏëÇóµÃf(10)£¬ĞèÒªÏÈÇóµÃf(9)ºÍf(8)¡£
-	 * Í¬Ñù£¬ÏëÇóµÃf(9)£¬ĞèÒªÏÈÇóµÃf(8)ºÍf(7),....,»á´æÔÚ¶à¸öÖØ¸´Öµ£¬¶øÇÒÖØ¸´µÄÖµ»áËæ×ÅnµÄÔö´ó¶ø¼±¾çÔö¼Ó£¬ÕâÒâÎ¶¼ÆËãÁ¿»áËæ×ÅnµÄÔö´ó¶ø¼±¾çÔö´ó¡£
+	 * æ±‚è§£æ€è·¯ä¸€ï¼šé€’å½’è§£å†³ï¼Œä¸è¿‡æ•ˆç‡ä½ã€‚ä»¥æ±‚è§£f(10)ä¸ºä¾‹ï¼Œå¦‚æœæƒ³æ±‚å¾—f(10)ï¼Œéœ€è¦å…ˆæ±‚å¾—f(9)å’Œf(8)ã€‚
+	 * åŒæ ·ï¼Œæƒ³æ±‚å¾—f(9)ï¼Œéœ€è¦å…ˆæ±‚å¾—f(8)å’Œf(7),....,ä¼šå­˜åœ¨å¤šä¸ªé‡å¤å€¼ï¼Œè€Œä¸”é‡å¤çš„å€¼ä¼šéšç€nçš„å¢å¤§è€Œæ€¥å‰§å¢åŠ ï¼Œè¿™æ„å‘³è®¡ç®—é‡ä¼šéšç€nçš„å¢å¤§è€Œæ€¥å‰§å¢å¤§ã€‚
 	 *
 	 * @param n
 	 * @return
 	 */
 	public long nFibonacci(long n) {
 		if (n < 0) {
-			throw new RuntimeException("ÊäÈëµÄÏî²»ÄÜĞ¡ÓÚ0");
+			throw new RuntimeException("è¾“å…¥çš„é¡¹ä¸èƒ½å°äº0");
 		}
 		if (n == 0) {
 			return 0;
@@ -62,14 +62,14 @@ public class Fibonacci {
 	}
 
 	/**
-	 * ½âÌâË¼Â·2£¨ÍÆ¼öÊ¹ÓÃ£©:ÓÃÑ­»·ÊµÏÖ£¬ÀûÓÃÇ°Á½ÏîÒÑ¾­¼ÆËã³öÀ´µÄ½á¹û£¬¼ÆËãÏÂÒ»¸ö£¬Ê±¼ä¸´ÔÓ¶ÈO(n)
+	 * è§£é¢˜æ€è·¯2ï¼ˆæ¨èä½¿ç”¨ï¼‰:ç”¨å¾ªç¯å®ç°ï¼Œåˆ©ç”¨å‰ä¸¤é¡¹å·²ç»è®¡ç®—å‡ºæ¥çš„ç»“æœï¼Œè®¡ç®—ä¸‹ä¸€ä¸ªï¼Œæ—¶é—´å¤æ‚åº¦O(n)
 	 *
 	 * @param n
 	 * @return
 	 */
 	public long nFibonacciWithLoop(long n) {
 		if (n < 0) {
-			throw new InvalidParameterException("ÊäÈëµÄÏî²»ÄÜĞ¡ÓÚ0");
+			throw new InvalidParameterException("è¾“å…¥çš„é¡¹ä¸èƒ½å°äº0");
 		}
 		if (n == 0) {
 			return 0;
@@ -77,15 +77,15 @@ public class Fibonacci {
 		if (n == 1) {
 			return 1;
 		}
-		// µÚn-1Ïî£¨³õÊ¼ÖµÎªn=1£©
+		// ç¬¬n-1é¡¹ï¼ˆåˆå§‹å€¼ä¸ºn=1ï¼‰
 		long before1 = 1;
-		// µÚn-2Ïî£¨³õÊ¼ÖµÎªn=0£©
+		// ç¬¬n-2é¡¹ï¼ˆåˆå§‹å€¼ä¸ºn=0ï¼‰
 		long before2 = 0;
-		// µÚnÏî
+		// ç¬¬né¡¹
 		long fn = 0;
 		for (int i = 2; i <= n; i++) {
 			fn = before1 + before2;
-			// ÎªÏÂÒ»´Î×öºÃ×¼±¸£¬¶¼Ç°½øÒ»Ïî
+			// ä¸ºä¸‹ä¸€æ¬¡åšå¥½å‡†å¤‡ï¼Œéƒ½å‰è¿›ä¸€é¡¹
 			before2 = before1;
 			before1 = fn;
 		}
@@ -93,7 +93,7 @@ public class Fibonacci {
 	}
 
 	/**
-	 * ½âÌâË¼Â·3£ºÀûÓÃÊıÑ§¹«Ê½¼ÆËã£¬²»¹ıÕâ¸öÊıÑ§¹«Ê½±È½ÏÄÑ¼Ç×¡¡£Ê±¼ä¸´ÔÓ¶ÈO(logn)£¨Õâ¸öÔİÊ±»¹Ã»ÓĞÍê³É£©
+	 * è§£é¢˜æ€è·¯3ï¼šåˆ©ç”¨æ•°å­¦å…¬å¼è®¡ç®—ï¼Œä¸è¿‡è¿™ä¸ªæ•°å­¦å…¬å¼æ¯”è¾ƒéš¾è®°ä½ã€‚æ—¶é—´å¤æ‚åº¦O(logn)ï¼ˆè¿™ä¸ªæš‚æ—¶è¿˜æ²¡æœ‰å®Œæˆï¼‰
 	 *
 	 * @param n
 	 * @return
@@ -103,16 +103,16 @@ public class Fibonacci {
 	}
 
 	/**
-	 * Çó¾ØÕóµÄ³Ë·½£¨Õâ¸öÔİÊ±»¹Ã»ÓĞÍê³É£©
+	 * æ±‚çŸ©é˜µçš„ä¹˜æ–¹ï¼ˆè¿™ä¸ªæš‚æ—¶è¿˜æ²¡æœ‰å®Œæˆï¼‰
 	 *
 	 * @param matrix
-	 *            ¾ØÕó£¬¼´¶şÎ¬Êı×é
+	 *            çŸ©é˜µï¼Œå³äºŒç»´æ•°ç»„
 	 * @param power
-	 *            ³Ë·½µÄÊı
+	 *            ä¹˜æ–¹çš„æ•°
 	 */
 	public int[][] matrixPower(int[][] matrix, int power) {
 		if (power <= 0) {
-			throw new InvalidParameterException("³Ë·½Êı²»ÄÜĞ¡ÓÚµÈÓÚ0£¡£¡");
+			throw new InvalidParameterException("ä¹˜æ–¹æ•°ä¸èƒ½å°äºç­‰äº0ï¼ï¼");
 		}
 		if (power == 1) {
 			return matrix;
@@ -128,11 +128,11 @@ public class Fibonacci {
 			return matrix;
 		}
 
-		// Å¼ÊıÊ±
+		// å¶æ•°æ—¶
 		if (power % 2 == 0) {
 			return matrixPower(matrixPower(matrix, power / 2), 2);
 		}
-		// ÆæÊıÊ±
+		// å¥‡æ•°æ—¶
 		if (power % 2 != 0) {
 			return matrixPower(matrixPower(matrix, power / 2), 2);
 		}

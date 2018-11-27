@@ -3,16 +3,16 @@ package com.kanlon.power;
 import java.security.InvalidParameterException;
 
 /**
- * ÊıÖµµÄÕûÊı´Î·½ ÌâÄ¿£ºÊµÏÖº¯Êıdouble Power(double base,int
- * exponent),ÇóbaseµÄexponent´Î·½¡£²»µÃÊ¹ÓÃ¿âº¯Êı£¬Í¬Ê±²»ĞèÒª¿¼ÂÇ´óÊıÎÊÌâ¡£
+ * æ•°å€¼çš„æ•´æ•°æ¬¡æ–¹ é¢˜ç›®ï¼šå®ç°å‡½æ•°double Power(double base,int
+ * exponent),æ±‚baseçš„exponentæ¬¡æ–¹ã€‚ä¸å¾—ä½¿ç”¨åº“å‡½æ•°ï¼ŒåŒæ—¶ä¸éœ€è¦è€ƒè™‘å¤§æ•°é—®é¢˜ã€‚
  *
  * @author zhangcanlong
- * @date 2018Äê10ÔÂ6ÈÕ
+ * @date 2018å¹´10æœˆ6æ—¥
  */
 public class CulPower {
 	public static void main(String[] args) {
 		CulPower cul = new CulPower();
-		// ²âÊÔÓÃÀı£¬½«µ×ÊıºÍÖ¸Êı·Ö±ğÉèÎªÕıÊı£¬¸ºÊı£¬ºÍÁã
+		// æµ‹è¯•ç”¨ä¾‹ï¼Œå°†åº•æ•°å’ŒæŒ‡æ•°åˆ†åˆ«è®¾ä¸ºæ­£æ•°ï¼Œè´Ÿæ•°ï¼Œå’Œé›¶
 		double base1 = 2;
 		int exponent1 = 3;
 		double base2 = 2;
@@ -37,18 +37,18 @@ public class CulPower {
 	}
 
 	/**
-	 * ½âÌâË¼Â·1£º¿¼ÂÇµ½Ö¸ÊıÓĞ¿ÉÄÜÊÇ¸ºÊı£¬µ±exponentÊÇ¸ºÊıÊ±£¬baseÒ²ÊÇ0Ê±£¬Ôò·µ»Ø0.½á¹ûÊÇbaseµÄ¾ø¶ÔÖµµÄµ¹Êı¡£
-	 * ×¢Òâ£ºÔÚdoubleÖµ½øĞĞ±È½ÏÊ±£¬²»ÄÜÖ±½Ó±È½Ï
+	 * è§£é¢˜æ€è·¯1ï¼šè€ƒè™‘åˆ°æŒ‡æ•°æœ‰å¯èƒ½æ˜¯è´Ÿæ•°ï¼Œå½“exponentæ˜¯è´Ÿæ•°æ—¶ï¼Œbaseä¹Ÿæ˜¯0æ—¶ï¼Œåˆ™è¿”å›0.ç»“æœæ˜¯baseçš„ç»å¯¹å€¼çš„å€’æ•°ã€‚
+	 * æ³¨æ„ï¼šåœ¨doubleå€¼è¿›è¡Œæ¯”è¾ƒæ—¶ï¼Œä¸èƒ½ç›´æ¥æ¯”è¾ƒ
 	 *
 	 * @param base
 	 * @param exponent
 	 * @return
 	 */
 	public double power(double base, int exponent) {
-		// ÕâÀï²»ÄÜÖ±½ÓÓÃbase==0À´ÅĞ¶Ï£¬ÒòÎªbaseÊÇ¸¡µãÊı£¬0ÊÇ²»×¼È·µÄÖµ
+		// è¿™é‡Œä¸èƒ½ç›´æ¥ç”¨base==0æ¥åˆ¤æ–­ï¼Œå› ä¸ºbaseæ˜¯æµ®ç‚¹æ•°ï¼Œ0æ˜¯ä¸å‡†ç¡®çš„å€¼
 		if (equal(base, 0) && exponent < 0) {
-			// Èç¹ûµ×ÊıÊÇ0£¬¶øÇÒÖ¸ÊıÊÇĞ¡ÓÚ0µÄ£¬Ôò0²»ÄÜ×ö³ıÊı£¬Å×³öÒì³£
-			throw new InvalidParameterException("0µÄÖ¸Êı²»ÄÜ¸ºÊı£¬Ã»ÓĞÒâÒå£¡£¡");
+			// å¦‚æœåº•æ•°æ˜¯0ï¼Œè€Œä¸”æŒ‡æ•°æ˜¯å°äº0çš„ï¼Œåˆ™0ä¸èƒ½åšé™¤æ•°ï¼ŒæŠ›å‡ºå¼‚å¸¸
+			throw new InvalidParameterException("0çš„æŒ‡æ•°ä¸èƒ½è´Ÿæ•°ï¼Œæ²¡æœ‰æ„ä¹‰ï¼ï¼");
 		}
 		double result = bestPowerWithUnsignedException(base, Math.abs(exponent));
 		if (exponent < 0) {
@@ -58,12 +58,12 @@ public class CulPower {
 	}
 
 	/**
-	 * ¼ÆËãbaseµÄÕıÕûÊıexponent´Î·½µÄ½á¹û,Ö±½Ó¶à´ÎbaseÏà³Ë
+	 * è®¡ç®—baseçš„æ­£æ•´æ•°exponentæ¬¡æ–¹çš„ç»“æœ,ç›´æ¥å¤šæ¬¡baseç›¸ä¹˜
 	 *
 	 * @param base
-	 *            µ×Êı
+	 *            åº•æ•°
 	 * @param abs
-	 *            ÕıÕûÊı´Î·½
+	 *            æ­£æ•´æ•°æ¬¡æ–¹
 	 * @return
 	 */
 	private double powerWithUnsignedExponent(double base, int exponent) {
@@ -75,12 +75,12 @@ public class CulPower {
 	}
 
 	/**
-	 * (ÍÆ¼öÊ¹ÓÃ)¼ÆËãbaseµÄÕıÕûÊıexponent´Î·½µÄ½á¹û£¬×îºÃµÄ·½·¨£¬ÀûÓÃÁËÇóaµÄn´Î·½µÄ¹«Ê½¡£Ê±¼ä¸´ÔÓ¶ÈÎªO(logn)
+	 * (æ¨èä½¿ç”¨)è®¡ç®—baseçš„æ­£æ•´æ•°exponentæ¬¡æ–¹çš„ç»“æœï¼Œæœ€å¥½çš„æ–¹æ³•ï¼Œåˆ©ç”¨äº†æ±‚açš„næ¬¡æ–¹çš„å…¬å¼ã€‚æ—¶é—´å¤æ‚åº¦ä¸ºO(logn)
 	 *
 	 * @param base
-	 *            µ×Êı
+	 *            åº•æ•°
 	 * @param exponect
-	 *            ÕıÕûÊı´Î·½
+	 *            æ­£æ•´æ•°æ¬¡æ–¹
 	 * @return
 	 */
 	private double bestPowerWithUnsignedException(double base, int exponent) {
@@ -99,7 +99,7 @@ public class CulPower {
 	}
 
 	/**
-	 * ±È½ÏÁ½¸ödoubleÖµÊÇ·ñÏàµÈ
+	 * æ¯”è¾ƒä¸¤ä¸ªdoubleå€¼æ˜¯å¦ç›¸ç­‰
 	 *
 	 * @param num1
 	 * @param num2

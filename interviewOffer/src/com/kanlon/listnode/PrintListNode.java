@@ -3,16 +3,16 @@ package com.kanlon.listnode;
 import java.util.Stack;
 
 /**
- * ÌâÄ¿£ºÊäÈëÒ»¸öÁ´±íµÄÍ·½áµã£¬´ÓÎ²µ½Í··´¹ıÀ´´òÓ¡³öÃ¿¸ö½áµãµÄÖµ¡£<br/>
- * Á´±íµÄ½áµã¶¨ÒåÈçÏÂ£º class ListNode { int mNKey; ListNode mPNext; }
+ * é¢˜ç›®ï¼šè¾“å…¥ä¸€ä¸ªé“¾è¡¨çš„å¤´ç»“ç‚¹ï¼Œä»å°¾åˆ°å¤´åè¿‡æ¥æ‰“å°å‡ºæ¯ä¸ªç»“ç‚¹çš„å€¼ã€‚<br/>
+ * é“¾è¡¨çš„ç»“ç‚¹å®šä¹‰å¦‚ä¸‹ï¼š class ListNode { int mNKey; ListNode mPNext; }
  *
  * @author zhangcanlong
- * @date 2018Äê9ÔÂ24ÈÕ
+ * @date 2018å¹´9æœˆ24æ—¥
  */
 public class PrintListNode {
 	public static void main(String[] args) {
 		PrintListNode node = new PrintListNode();
-		// ¶¨Òå²âÊÔÁ´±í
+		// å®šä¹‰æµ‹è¯•é“¾è¡¨
 		ListNode listNode1 = new ListNode();
 		listNode1.mNKey = 1;
 		ListNode listNode2 = new ListNode();
@@ -25,25 +25,25 @@ public class PrintListNode {
 		listNode1.mPNext = listNode2;
 		listNode2.mPNext = listNode3;
 		listNode3.mPNext = listNode4;
-		// ÊäÈëÁ´±íÓĞ¶à¸ö½áµã
+		// è¾“å…¥é“¾è¡¨æœ‰å¤šä¸ªç»“ç‚¹
 		node.PrintListNodeReversinglyStack(listNode1);
 		node.PrintListNodeReversinglyRecursion(listNode1);
-		// ÊäÈëÁ´±íÖ»ÓĞÒ»¸ö½áµã
+		// è¾“å…¥é“¾è¡¨åªæœ‰ä¸€ä¸ªç»“ç‚¹
 		node.PrintListNodeReversinglyStack(listNode4);
 		node.PrintListNodeReversinglyRecursion(listNode4);
-		// ÊäÈëÁ´±íÍ·½áµãÎª¿Õ
+		// è¾“å…¥é“¾è¡¨å¤´ç»“ç‚¹ä¸ºç©º
 		node.PrintListNodeReversinglyStack(null);
 		node.PrintListNodeReversinglyRecursion(null);
 	}
 
 	/**
-	 * ·­×ª´òÓ¡Á´±í£¨Õ»·½Ê½ÊµÏÖ£©
+	 * ç¿»è½¬æ‰“å°é“¾è¡¨ï¼ˆæ ˆæ–¹å¼å®ç°ï¼‰
 	 *
 	 * @param listNode
 	 */
 	public void PrintListNodeReversinglyStack(ListNode listNode) {
 		if (listNode == null) {
-			System.out.println("¸ÃÁ´±íÎª¿Õ£¡");
+			System.out.println("è¯¥é“¾è¡¨ä¸ºç©ºï¼");
 			return;
 		}
 
@@ -53,20 +53,20 @@ public class PrintListNode {
 			listNode = listNode.mPNext;
 			stack.push(listNode);
 		}
-		System.out.println("·­×ªºóµÄÁ´±íÎª£¨Õ»·½Ê½£©£º");
+		System.out.println("ç¿»è½¬åçš„é“¾è¡¨ä¸ºï¼ˆæ ˆæ–¹å¼ï¼‰ï¼š");
 		while (!stack.isEmpty()) {
 			System.out.print(stack.pop().mNKey + "\n");
 		}
 	}
 
 	/**
-	 * ·­×ª´òÓ¡Á´±í£¨µİ¹é·½Ê½£©
+	 * ç¿»è½¬æ‰“å°é“¾è¡¨ï¼ˆé€’å½’æ–¹å¼ï¼‰
 	 *
 	 * @param listNode
 	 */
 	public void PrintListNodeReversinglyRecursion(ListNode listNode) {
 		if (listNode == null) {
-			System.out.println("µİ¹é·½Ê½ÊµÏÖ·­×ª´òÓ¡³öÁ´±í£º");
+			System.out.println("é€’å½’æ–¹å¼å®ç°ç¿»è½¬æ‰“å°å‡ºé“¾è¡¨ï¼š");
 			return;
 		}
 		PrintListNodeReversinglyRecursion(listNode.mPNext);
@@ -74,7 +74,7 @@ public class PrintListNode {
 	}
 }
 
-// ½áµãÀà
+// ç»“ç‚¹ç±»
 class ListNode {
 	int mNKey;
 	ListNode mPNext;

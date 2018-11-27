@@ -4,26 +4,26 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * µ¥ÀıÄ£Ê½ÊµÏÖµÄÀ©Õ¹ÎÊÌâ£¬¶¨ÒåÒ»¸ö»ùÀà£¬Ê¹µÃÊµÏÖ¸Ã»ùÀàµÄÅÉÉúÀàĞÍ¶¼Ö»ÄÜ²úÉúÒ»¸öÊµÀı
+ * å•ä¾‹æ¨¡å¼å®ç°çš„æ‰©å±•é—®é¢˜ï¼Œå®šä¹‰ä¸€ä¸ªåŸºç±»ï¼Œä½¿å¾—å®ç°è¯¥åŸºç±»çš„æ´¾ç”Ÿç±»å‹éƒ½åªèƒ½äº§ç”Ÿä¸€ä¸ªå®ä¾‹
  *
  * @author zhangcanlong
- * @date 2018Äê9ÔÂ18ÈÕ
+ * @date 2018å¹´9æœˆ18æ—¥
  */
 public class SingletonDemoExt {
 
 }
 
 /**
- * µÇ¼ÇÊ½£¬spring IOC ¾ÍÊÇÊ¹ÓÃ¸Ã·½·¨ÊµÏÖ
+ * ç™»è®°å¼ï¼Œspring IOC å°±æ˜¯ä½¿ç”¨è¯¥æ–¹æ³•å®ç°
  *
  * @author zhangcanlong
- * @date 2018Äê9ÔÂ18ÈÕ
+ * @date 2018å¹´9æœˆ18æ—¥
  */
 class President {
-	// µÇ¼Ç²¾£¬ÓÃÀ´´æ·ÅËùÓĞµÄÊµÀı
+	// ç™»è®°ç°¿ï¼Œç”¨æ¥å­˜æ”¾æ‰€æœ‰çš„å®ä¾‹
 	private static Map<String, President> regSingletonMap = new HashMap<>();
 
-	// ÔÚÀà¼ÓÔØµÄÊ±ºòÌí¼ÓÒ»¸öÊµÀıµ½µÇ¼Ç²¾ÖĞ
+	// åœ¨ç±»åŠ è½½çš„æ—¶å€™æ·»åŠ ä¸€ä¸ªå®ä¾‹åˆ°ç™»è®°ç°¿ä¸­
 	static {
 		President president = new President();
 		regSingletonMap.put(president.getClass().getName(), president);
@@ -31,7 +31,7 @@ class President {
 	}
 
 	//
-	// ±£»¤Ä¬ÈÏµÄ¹¹Ôì·½·¨
+	// ä¿æŠ¤é»˜è®¤çš„æ„é€ æ–¹æ³•
 	protected President() {
 	}
 

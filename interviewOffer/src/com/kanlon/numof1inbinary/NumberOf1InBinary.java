@@ -1,21 +1,21 @@
 package com.kanlon.numof1inbinary;
 
 /**
- * ÌâÄ¿£º¶þ½øÖÆÖÐ1µÄ¸öÊý¡£
- * ÇëÊµÏÖÒ»¸öº¯Êý£¬ÊäÈëÒ»¸öÕûÊý£¬Êä³ö¸ÃÊý¶þ½øÖÆÖÐ1µÄ¸öÊý¡£ÀýÈç°Ñ9±íÊ¾³É¶þ½øÖÆÊÇ1001£¬ÓÐ2Î»ÊÇ1¡£Òò´Ë£¬Èç¹ûÊäÈë9£¬¸Ãº¯ÊýÊä³ö2¡£
+ * é¢˜ç›®ï¼šäºŒè¿›åˆ¶ä¸­1çš„ä¸ªæ•°ã€‚
+ * è¯·å®žçŽ°ä¸€ä¸ªå‡½æ•°ï¼Œè¾“å…¥ä¸€ä¸ªæ•´æ•°ï¼Œè¾“å‡ºè¯¥æ•°äºŒè¿›åˆ¶ä¸­1çš„ä¸ªæ•°ã€‚ä¾‹å¦‚æŠŠ9è¡¨ç¤ºæˆäºŒè¿›åˆ¶æ˜¯1001ï¼Œæœ‰2ä½æ˜¯1ã€‚å› æ­¤ï¼Œå¦‚æžœè¾“å…¥9ï¼Œè¯¥å‡½æ•°è¾“å‡º2ã€‚
  *
  * @author zhangcanlong
- * @date 2018Äê10ÔÂ5ÈÕ
+ * @date 2018å¹´10æœˆ5æ—¥
  */
 public class NumberOf1InBinary {
 
 	public static void main(String[] args) {
 		NumberOf1InBinary binary = new NumberOf1InBinary();
-		// ²âÊÔ
-		// ÕýÊý
+		// æµ‹è¯•
+		// æ­£æ•°
 		int n1 = 1;
 		int n2 = 0x7FFFFFFF;
-		// ¸ºÊý£¨°üº¬±ß½çÖµ£©
+		// è´Ÿæ•°ï¼ˆåŒ…å«è¾¹ç•Œå€¼ï¼‰
 		int n3 = 0x80000000;
 		int n4 = 0xFFFFFFF;
 		// 0
@@ -48,14 +48,14 @@ public class NumberOf1InBinary {
 	}
 
 	/**
-	 * ½âÌâË¼Â·1£ºÏÈÅÐ¶ÏnÊÇ·ñµÈÓÚ0ÁË£¬²»µÈÔò£¬ÏÈ½«nÓë1×÷ÓëÔËËã£¨ÕûÊý1µÄ¶þ½øÖÆÎª³ýÁË×îÓÒ±ßÒ»Î»Îª1£¬ÆäËûÎ»Îª0£©£¬ÅÐ¶Ïn¶þ½øÖÆµÄ×îºóÒ»Î»ÊÇ²»ÊÇ1£¬Èç¹ûÔËËã½á¹ûÎª1£¬Ôò1µÄ¸öÊý++£¬Ôò±íÊ¾×îÓÒ±ßÒ»Î»Îª1£¬·ñÔòÎª0.
-	 * È»ºó½«nÓÒÒÆÒ»Î»£¬½Ó×ÅÉÏÃæµÄÅÐ¶Ï¡£
+	 * è§£é¢˜æ€è·¯1ï¼šå…ˆåˆ¤æ–­næ˜¯å¦ç­‰äºŽ0äº†ï¼Œä¸ç­‰åˆ™ï¼Œå…ˆå°†nä¸Ž1ä½œä¸Žè¿ç®—ï¼ˆæ•´æ•°1çš„äºŒè¿›åˆ¶ä¸ºé™¤äº†æœ€å³è¾¹ä¸€ä½ä¸º1ï¼Œå…¶ä»–ä½ä¸º0ï¼‰ï¼Œåˆ¤æ–­näºŒè¿›åˆ¶çš„æœ€åŽä¸€ä½æ˜¯ä¸æ˜¯1ï¼Œå¦‚æžœè¿ç®—ç»“æžœä¸º1ï¼Œåˆ™1çš„ä¸ªæ•°++ï¼Œåˆ™è¡¨ç¤ºæœ€å³è¾¹ä¸€ä½ä¸º1ï¼Œå¦åˆ™ä¸º0.
+	 * ç„¶åŽå°†nå³ç§»ä¸€ä½ï¼ŒæŽ¥ç€ä¸Šé¢çš„åˆ¤æ–­ã€‚
 	 * <p>
-	 * ×¢Òâ£ºÔÚÓÒÒÆµÄÊ±ºò£¬Ê¹ÓÃµÄÊÇjavaÖÐµÄÎÞ·ûºÅÎ»ÓÒÒÆ,²»È»»áÏÝÈëËÀÑ­»·
+	 * æ³¨æ„ï¼šåœ¨å³ç§»çš„æ—¶å€™ï¼Œä½¿ç”¨çš„æ˜¯javaä¸­çš„æ— ç¬¦å·ä½å³ç§»,ä¸ç„¶ä¼šé™·å…¥æ­»å¾ªçŽ¯
 	 *
 	 * @param n
-	 *            ÐèÒªÅÐ¶ÏµÄÊý
-	 * @return ·µ»Ø¶þ½øÖÆÐÎÊ½ÖÐµÄ1µÄ¸öÊý
+	 *            éœ€è¦åˆ¤æ–­çš„æ•°
+	 * @return è¿”å›žäºŒè¿›åˆ¶å½¢å¼ä¸­çš„1çš„ä¸ªæ•°
 	 */
 	public int countNumOf1Method1(int n) {
 		int num = 0;
@@ -64,27 +64,27 @@ public class NumberOf1InBinary {
 			if (value == 1) {
 				++num;
 			}
-			// ÕâÀïÐèÒªÊ¹ÓÃÎÞ·ûºÅÓÒÒÆ(²Å²»»áÏÝÈëµ½ËÀÑ­»·£¬¶øÇÒÕâÀïËãµÄ»°»áÁ¬·ûºÅÎ»Ò²Ëã½øÈ¥)
+			// è¿™é‡Œéœ€è¦ä½¿ç”¨æ— ç¬¦å·å³ç§»(æ‰ä¸ä¼šé™·å…¥åˆ°æ­»å¾ªçŽ¯ï¼Œè€Œä¸”è¿™é‡Œç®—çš„è¯ä¼šè¿žç¬¦å·ä½ä¹Ÿç®—è¿›åŽ»)
 			n = n >>> 1;
 		}
 		return num;
 	}
 
 	/**
-	 * ½âÌâË¼Â·2£ºÍ¨¹ý×óÒÆ¼ÆËã¡£Ê×ÏÈ°ÑiºÍ1×öÓëÔËËã£¬ÅÐ¶ÏiµÄ×îµÍÎ»ÊÇ²»ÊÇ1¡£½Ó×Å°Ñ1×óÒÆÒ»Î»µÃµ½2£¬ÔÙºÍi×öÓëÔËËã£¬¾ÍÄÜÅÐ¶ÏiµÄ´ÎµÍÎ»ÊÇ²»ÊÇ1£¬
-	 * ÕâÑù·´¸´×óÒÆ£¬Ã¿´ÎÅÐ¶ÏiµÄÆäÖÐÒ»Î»ÊÇ²»ÊÇ1¡£(ÕâÖÖ·½·¨ÊÇ²»¼ÆËãÉÏ·ûºÅÎ»£¬Òª×Ô¼º¼ÓÉÏ)
+	 * è§£é¢˜æ€è·¯2ï¼šé€šè¿‡å·¦ç§»è®¡ç®—ã€‚é¦–å…ˆæŠŠiå’Œ1åšä¸Žè¿ç®—ï¼Œåˆ¤æ–­içš„æœ€ä½Žä½æ˜¯ä¸æ˜¯1ã€‚æŽ¥ç€æŠŠ1å·¦ç§»ä¸€ä½å¾—åˆ°2ï¼Œå†å’Œiåšä¸Žè¿ç®—ï¼Œå°±èƒ½åˆ¤æ–­içš„æ¬¡ä½Žä½æ˜¯ä¸æ˜¯1ï¼Œ
+	 * è¿™æ ·åå¤å·¦ç§»ï¼Œæ¯æ¬¡åˆ¤æ–­içš„å…¶ä¸­ä¸€ä½æ˜¯ä¸æ˜¯1ã€‚(è¿™ç§æ–¹æ³•æ˜¯ä¸è®¡ç®—ä¸Šç¬¦å·ä½ï¼Œè¦è‡ªå·±åŠ ä¸Š)
 	 *
 	 * @param n
 	 * @return
 	 */
 	public int countNumOf1LeftMove(int n) {
-		// ÐèÒª¼ÓÉÏ·ûºÅÎ»²ÅÊÇÕýÈ·µÄ
+		// éœ€è¦åŠ ä¸Šç¬¦å·ä½æ‰æ˜¯æ­£ç¡®çš„
 		int num = 0;
 		if (n < 0) {
 			num = 1;
 		}
 		int flag = 1;
-		// µ±flag´óÓÚ0Ê±£¬¶¼ÒªÒ»Ö±Ñ­»·
+		// å½“flagå¤§äºŽ0æ—¶ï¼Œéƒ½è¦ä¸€ç›´å¾ªçŽ¯
 		while (flag > 0) {
 			int value = n & flag;
 			if (value > 0) {
@@ -96,11 +96,11 @@ public class NumberOf1InBinary {
 	}
 
 	/**
-	 * ½âÌâË¼Â·3£¨ÍÆ¼ö£©:
-	 * °ÑÒ»¸öÕûÊý¼õÈ¥1£¬ÔÙºÍÔ­ÕûÊý×öÓëÔËËã£¬»á°Ñ¸ÃÕûÊýµÄ×îÓÒ±ßÒ»¸ö1±ä³É0£¬ÄÇÃ´Ò»¸öÕûÊýµÄ¶þ½øÖÆ±íÊ¾ÖÐÓÐ¶àÉÙ¸ö1£¬¾Í¿ÉÒÔ½øÐÐ¶àÉÙ´ÎÕâÑùµÄ²Ù×÷
+	 * è§£é¢˜æ€è·¯3ï¼ˆæŽ¨èï¼‰:
+	 * æŠŠä¸€ä¸ªæ•´æ•°å‡åŽ»1ï¼Œå†å’ŒåŽŸæ•´æ•°åšä¸Žè¿ç®—ï¼Œä¼šæŠŠè¯¥æ•´æ•°çš„æœ€å³è¾¹ä¸€ä¸ª1å˜æˆ0ï¼Œé‚£ä¹ˆä¸€ä¸ªæ•´æ•°çš„äºŒè¿›åˆ¶è¡¨ç¤ºä¸­æœ‰å¤šå°‘ä¸ª1ï¼Œå°±å¯ä»¥è¿›è¡Œå¤šå°‘æ¬¡è¿™æ ·çš„æ“ä½œ
 	 *
 	 * @param n
-	 *            Òª¼ÆËãµÄÕûÊý
+	 *            è¦è®¡ç®—çš„æ•´æ•°
 	 * @return
 	 */
 	public int countNumOf1AndSelf(int n) {
