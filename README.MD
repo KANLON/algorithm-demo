@@ -189,7 +189,23 @@ class ListNode{
 <br/>
 
 
+#### 面试题18：树的子结构
+题目：输入两颗二叉树A和B，判断B是不是A的子结构。二叉树结点的定义如下：<br/>
+二叉树的定义如下：
+```
+class BinaryTreeNode{
+	int mNValue;
+	BinaryTreeNode mPLeft;
+	BinaryTreeNode mPRight;
+}
+```
+例如：下图中的两颗二叉树，由于A中有一部分子树的结构和B是一样的，因此B是A的子结构。
+<img src="https://raw.githubusercontent.com/KANLON/algorithmDemo/master/image/sub_tree.PNG"/><br/>
 
+
+答案：<br/>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/sub_tree'>sub_tree</a><br/>
+<br/>
 
 
 
