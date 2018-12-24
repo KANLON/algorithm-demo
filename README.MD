@@ -207,6 +207,22 @@ class BinaryTreeNode{
 <a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/sub_tree'>sub_tree</a><br/>
 <br/>
 
+#### 面试题19：二叉树的镜像
+题目：请完成一个函数，输入一个二叉树，该函数输出它的镜像。<br/>
+二叉树的定义如下：
+```
+class BinaryTreeNode{
+	int mNValue;
+	BinaryTreeNode mPLeft;
+	BinaryTreeNode mPRight;
+}
+```
+例如下图右边的二叉树就是左边的树的镜像<br/>
+<img src="https://raw.githubusercontent.com/KANLON/algorithmDemo/master/image/tree_mirror.PNG"/><br/>
+答案:<br/>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/tree_mirror'>tree_mirror</a><br/>
+<br/>
+
 
 
 ### 其他题目
