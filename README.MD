@@ -237,6 +237,20 @@ class BinaryTreeNode{
 <br/>
 
 
+### 面试题21：包含min函数的栈
+题目：定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的min函数。在该栈中，调用min、push及pop的时间复杂度都是O(1)<br/>
+答案:<br/>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/stack_with_min'>stack_with_min</a><br/>
+<br/>
+
+### 面试题22：栈的压入、弹出序列
+题目：输入两个整数序列，第一个序列表示栈顶压入顺序，请判断第二个序列是否为该栈的弹出顺序。假设压入栈的所有数字均不相等。例如序列1、2、3、4、5是某栈的压栈序列。序列4、5、3、2、1是该压栈序列对应的一个弹出序列，但4、3、5、1、2就不可能是该压栈序列的弹出序列。<br/>
+答案：<br/>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/stack_push_pop_order'>stack_push_pop_order</a><br/>
+<br/>
+
+
+
 ### 其他题目
 1.实现一个排序算法，要求时间效率O(n).对公司所有员工的年龄排序，公司总共有几万名员工。可以用辅助空间，只允许使用常量大小辅助空间，不得超过O(n)。<br/>
 答案：
