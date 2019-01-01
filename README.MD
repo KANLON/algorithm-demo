@@ -249,6 +249,24 @@ class BinaryTreeNode{
 <a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/stack_push_pop_order'>stack_push_pop_order</a><br/>
 <br/>
 
+### 面试题23：从上往下打印二叉树
+题目：从上往下打印出二叉树的每个结点，同一层的结点按照从左到右的顺序打印。例如输入如下图中的二叉树，则依次打印出8、6、10、5、7、9、11<br/>
+二叉树的定义如下：
+```
+class BinaryTreeNode{
+	int mNValue;
+	BinaryTreeNode mPLeft;
+	BinaryTreeNode mPRight;
+}
+```
+<br/>
+<img src="https://raw.githubusercontent.com/KANLON/algorithmDemo/master/image/binary_tree_top_to_bottom.PNG"/>
+答案：<br/>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/binary_tree_top_to_bottom'>binary_tree_top_to_bottom</a><br/>
+<br/>
+
+
+
 
 
 ### 其他题目
