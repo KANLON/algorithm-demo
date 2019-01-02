@@ -265,7 +265,13 @@ class BinaryTreeNode{
 <a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/binary_tree_top_to_bottom'>binary_tree_top_to_bottom</a><br/>
 <br/>
 
-
+### 面试题24：二叉搜索树的后序遍历序列
+题目：输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历结果。如果是则返回true,否则返回false。假设输入的数组的任意两个数字都互不相同。<br/>
+例如输入数组{5,7,6,9,11,10,8},则返回true,因为这个整数序列是如下图二叉搜索树的后序搜索结果。如果输入的数组是{7,4,6,5},由于没有哪棵二叉搜索树的后序遍历的结果是这个序列，因此返回false。<br/>
+<img src="https://raw.githubusercontent.com/KANLON/algorithmDemo/master/image/squence_of_BST.PNG"/>
+答案：<br/>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/squence_of_bst'>squence_of_bst</a><br/>
+<br/>
 
 
 
