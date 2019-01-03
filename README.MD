@@ -274,6 +274,20 @@ class BinaryTreeNode{
 <br/>
 
 
+### 面试题25：二叉树中和为某一值的路径
+题目：输入一棵二叉树和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。从树的根结点开始往下一直到叶结点形成一条路径。<br/>
+二叉树的定义如下：
+```
+class BinaryTreeNode{
+	int mNValue;
+	BinaryTreeNode mPLeft;
+	BinaryTreeNode mPRight;
+}
+```
+答案：<br/>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/path_in_tree'>path_in_tree</a><br/>
+<br/>
+
 
 ### 其他题目
 1.实现一个排序算法，要求时间效率O(n).对公司所有员工的年龄排序，公司总共有几万名员工。可以用辅助空间，只允许使用常量大小辅助空间，不得超过O(n)。<br/>
