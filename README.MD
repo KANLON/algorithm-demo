@@ -288,6 +288,25 @@ class BinaryTreeNode{
 <a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/path_in_tree'>path_in_tree</a><br/>
 <br/>
 
+### 面试题26：复杂链表的复制
+题目：请实现函数ComplexListNode clone(ComplexListNode pHead),复制一个复杂的链表。在复杂链表中，每个结点除了有一个m_pNext指针指向下一个结点外，还有一个m_pSibling指向链表中的任意结点或者null。结点的定义如下：<br/>
+```
+class ComplexListNode{
+	int m_nValue;
+	ComplexListNode m_pNext;
+	ComplexListNode m_pSibling;
+}
+```
+例如如下图是一个含有5个结点的复杂链表。图中实线箭头表示m_pNext指针，虚线箭头表示m_pSibling指针。为了简单起见，指向null指针没有画出。<br/>
+<img alt="一个含有5个结点的复杂链表"     src="https://raw.githubusercontent.com/KANLON/algorithmDemo/master/image/copy_complex_list.PNG"/>
+
+
+答案：<br/>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/copy_complex_list'>copy_complex_list</a><br/>
+<br/>
+
+
+
 
 ### 其他题目
 1.实现一个排序算法，要求时间效率O(n).对公司所有员工的年龄排序，公司总共有几万名员工。可以用辅助空间，只允许使用常量大小辅助空间，不得超过O(n)。<br/>
