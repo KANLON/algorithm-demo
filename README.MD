@@ -305,8 +305,20 @@ class ComplexListNode{
 <a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/copy_complex_list'>copy_complex_list</a><br/>
 <br/>
 
-
-
+### 面试题27：二叉搜索树和双向链表
+题目：输入一颗二叉搜索树，将二叉搜索树转换成一个排序的双向链表。要求不能创建任何新的结点，只能调整树中结点指针的指向。比如输入如下图中左边的二叉搜索树，则输出转换之后的排序双向链表。<br/>
+二叉树的定义如下：
+```
+class BinaryTreeNode{
+	int mNValue;
+	BinaryTreeNode mPLeft;
+	BinaryTreeNode mPRight;
+}
+```
+<img alt="一颗二叉搜索树及转换之后的排序双向链表" src="https://raw.githubusercontent.com/KANLON/algorithmDemo/master/image/convert_binary_search_tree.PNG"/><br/>
+答案：<br/>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/convert_binary_search_tree'>convert_binary_search_tree</a><br/>
+<br/>
 
 ### 其他题目
 1.实现一个排序算法，要求时间效率O(n).对公司所有员工的年龄排序，公司总共有几万名员工。可以用辅助空间，只允许使用常量大小辅助空间，不得超过O(n)。<br/>
