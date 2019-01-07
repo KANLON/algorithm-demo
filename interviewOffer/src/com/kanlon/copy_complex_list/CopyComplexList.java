@@ -31,7 +31,9 @@ public class CopyComplexList {
 		node12.m_pSibling = node14;
 		node13.m_pSibling = node12;
 		System.out.println("功能测试1（链表有多个值，任意指针指向两三个值:");
+		System.out.println("原链表：" + node11);
 		System.out.println(test.copyListNodeWithMap(node11).toString());
+		System.out.println("原链表：" + node11);
 		System.out.println(test.copyListNodeWithNext(node11).toString());
 
 		// 功能测试2（链表有多个值，任意指针都为null）
@@ -45,6 +47,7 @@ public class CopyComplexList {
 		node23.m_pNext = node24;
 		node24.m_pNext = node25;
 		System.out.println("功能测试2（链表有多个值，任意指针都为null）");
+		System.out.println("原链表：" + node21);
 		System.out.println(test.copyListNodeWithMap(node21).toString());
 		System.out.println(test.copyListNodeWithNext(node21).toString());
 
@@ -87,6 +90,7 @@ public class CopyComplexList {
 		Map<ComplexListNode, ComplexListNode> map = new HashMap<>();
 		// 设置链表的头结点
 		copyListNodeHead.m_nValue = tempOldListNode.m_nValue;
+		map.put(listNode, copyListNodeHead);
 		// 单单复制链表的结点值和下一个指针值
 		while (tempOldListNode.m_pNext != null) {
 			// 如果有下一个结点，则将创建一个结点，并将其链接到next链表中，和放入的map中
@@ -108,6 +112,7 @@ public class CopyComplexList {
 				copyListNodeHead2.m_pSibling = map.get(tempOldListNode2.m_pSibling);
 			}
 			tempOldListNode2 = tempOldListNode2.m_pNext;
+			copyListNodeHead2 = copyListNodeHead2.m_pNext;
 		}
 		return copyListNodeHead;
 	}
@@ -141,11 +146,15 @@ public class CopyComplexList {
 		// （2）重新定位
 		// 用来进行重新定位时链表遍历的临时结点
 		ComplexListNode newLocateTempNode = listNode;
+		// 统计当前遍历的结点数
+		int newLocateCount = 1;
 		while (newLocateTempNode != null) {
-			if (newLocateTempNode.m_pSibling != null && newLocateTempNode.m_pNext != null) {
+			// 当奇数时才需要重新定位
+			if (newLocateCount % 2 != 0 && newLocateTempNode.m_pSibling != null && newLocateTempNode.m_pNext != null) {
 				newLocateTempNode.m_pNext.m_pSibling = newLocateTempNode.m_pSibling.m_pNext;
 			}
 			newLocateTempNode = newLocateTempNode.m_pNext;
+			newLocateCount++;
 		}
 
 		// （3）拆分连接
@@ -157,19 +166,27 @@ public class CopyComplexList {
 		ComplexListNode copyListNodeTemp = listNode.m_pNext;
 		// 存储偶数的结点
 		ComplexListNode copyListNodeHead = listNode.m_pNext;
+		// 存储遍历的上一个结点位置用于删除偶数结点
+		ComplexListNode lastNode = listNode.m_pNext;
 		while (splitConnectTempNode != null) {
 			// 偶数
-			if (count >> 1 == 0) {
+			if (count % 2 == 0) {
 				// 将偶数结点链接到copy链表上
-				// 存储当前偶数结点
 				copyListNodeTemp.m_pNext = splitConnectTempNode;
 				copyListNodeTemp = copyListNodeTemp.m_pNext;
-				// 然后将结点删除（不是最后一个，则先将后面的结点值复制到当前结点来，然后将当前结点的下一个修改为后面结点的下一个，如果是最后一个，则不用处理）
+				// （这种删除方法不可以）然后将结点删除（不是最后一个，则先将后面的结点值复制到当前结点来，然后将当前结点的下一个修改为后面结点的下一个，如果是最后一个，则不用处理）
+				// if (splitConnectTempNode.m_pNext != null) {
+				// splitConnectTempNode.m_nValue =
+				// splitConnectTempNode.m_pNext.m_nValue;
+				// splitConnectTempNode.m_pNext =
+				// splitConnectTempNode.m_pNext.m_pNext;
+				// }
+				// 要跳过偶数点删除
 				if (splitConnectTempNode.m_pNext != null) {
-					splitConnectTempNode.m_nValue = splitConnectTempNode.m_pNext.m_nValue;
-					splitConnectTempNode.m_pNext = splitConnectTempNode.m_pNext.m_pNext;
+					lastNode.m_pNext = splitConnectTempNode.m_pNext;
 				}
 			} else {
+				lastNode = splitConnectTempNode;
 				splitConnectTempNode = splitConnectTempNode.m_pNext;
 			}
 			count++;
