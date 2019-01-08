@@ -320,6 +320,19 @@ class BinaryTreeNode{
 <a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/convert_binary_search_tree'>convert_binary_search_tree</a><br/>
 <br/>
 
+
+
+### 面试题28：字符串的排序
+题目：输入一个字符串，打印出该字符串中字符的所有排序。例如输入字符串abc，则打印出由字符a、b、c所能排序出来的所有字符串abc、acb、bac、bca、cab和cba<br/>
+答案：<br/>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/string_permutation'>string_permutation</a><br/>
+<br/>
+
+
+
+
+
+
 ### 其他题目
 1.实现一个排序算法，要求时间效率O(n).对公司所有员工的年龄排序，公司总共有几万名员工。可以用辅助空间，只允许使用常量大小辅助空间，不得超过O(n)。<br/>
 答案：
