@@ -19,7 +19,10 @@ public class StringPermutation {
 		// 功能测试2（含有1个字符串）
 		System.out.println("功能测试2（含有1个字符串）");
 		test.permutation("a");
-		// 功能测试特殊（空）
+		// 功能测试特殊1（空字符串）
+		System.out.println("特殊测试（空）");
+		test.permutation("");
+		// 功能测试特殊2（空）
 		System.out.println("特殊测试（空）");
 		test.permutation(null);
 

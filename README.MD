@@ -329,7 +329,11 @@ class BinaryTreeNode{
 <br/>
 ##### 拓展题目：<br/>
 
-拓展题目1：如果输入n个字符，则这n个字符能构成长度为1的组合、长度为2的组合、。。。、长度为n的组合。求n个字符的所有的组合（所有长度）<br/>
+拓展题目1：如果输入n个字符，则这n个字符能构成长度为1的组合、长度为2的组合、。。。、长度为n的组合。求n个字符的所有的组合（所有长度）<br/><br/>
+拓展题目2：输入一个含有8个数字的数组，判断有没有可能把这8个数字分别放到正方体的8个顶点上（如下图所示），使得正方体上三组相对的面上的4个顶点的和都相等。<br/><br/>
+<img alt="把8个数字放到正方体的8个顶点上" src="https://raw.githubusercontent.com/KANLON/algorithmDemo/master/image/square_combinate.png"/><br/>
+拓展题目3(8皇后问题)：在8X8的国际象棋上摆放8个皇后，使其不能相互攻击，即任意两个皇后不得处在同一行、同一列或者同一对角线上。下图中的每个黑色格子表示一个皇后，这就是一种符合条件的摆放方法。请问总共有多少种符合条件的摆法？<br/><br/>
+<img alt="把8个数字放到正方体的8个顶点上" src="https://raw.githubusercontent.com/KANLON/algorithmDemo/master/image/eight_queen.png"/><br/>
 
 答案：<br/>
 <a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/string_permutation'>string_permutation</a><br/>

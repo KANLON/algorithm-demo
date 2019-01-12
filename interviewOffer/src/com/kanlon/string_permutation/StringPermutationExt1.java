@@ -3,7 +3,7 @@ package com.kanlon.string_permutation;
 import java.util.Stack;
 
 /**
- * 字符串全排序的拓展1.
+ * 字符串全排序的拓展题目1.
  * <p>
  * 求n个字符的长度为m(1<=m<=n)的组合.
  *
