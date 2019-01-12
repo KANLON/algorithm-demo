@@ -327,6 +327,12 @@ class BinaryTreeNode{
 答案：<br/>
 <a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/string_permutation'>string_permutation</a><br/>
 <br/>
+##### 拓展题目：<br/>
+
+拓展题目1：如果输入n个字符，则这n个字符能构成长度为1的组合、长度为2的组合、。。。、长度为n的组合。求n个字符的所有的组合（所有长度）<br/>
+
+答案：<br/>
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/string_permutation'>string_permutation</a><br/>
 
 
 
