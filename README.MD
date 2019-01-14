@@ -356,6 +356,9 @@ class BinaryTreeNode{
 答案：
 [totalsort](https://github.com/KANLON/algorithmDemo/tree/master/other/totalsort)
 
+4.快速排序的实现<br/>
+答案：[quick_sort](https://github.com/KANLON/algorithmDemo/tree/master/other/quick_sort/QuickSort.java)
+
 
 
 
