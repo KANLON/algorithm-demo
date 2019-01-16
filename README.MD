@@ -340,6 +340,15 @@ class BinaryTreeNode{
 
 
 
+### 面试题29：数组中出现次数超过一半的数字
+
+题目：数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字，例如输入一个长度为9的数组{1,2,3,2,2,2,5,4,2}。由于数字2在数组中出现了5次，超过了数组长度的一半，因此输出2.<br/>
+
+答案：<br/>
+
+<a href='https://github.com/KANLON/algorithmDemo/tree/master/interviewOffer/src/com/kanlon/more_than_half_number'>more_than_half_number</a><br/>
+<br/>
+
 
 
 
@@ -360,6 +369,10 @@ class BinaryTreeNode{
 答案：[quick_sort](https://github.com/KANLON/algorithmDemo/tree/master/other/quick_sort/QuickSort.java)
 
 
+5.不用比较，找出两个数的较大值和较小值<br/>
+答案：[find_max_and_min](https://github.com/KANLON/algorithmDemo/tree/master/other/find_max_and_min/FindMaxAndMin.java)
+
+find_max_and_min
 
 
 ## 算法技巧
