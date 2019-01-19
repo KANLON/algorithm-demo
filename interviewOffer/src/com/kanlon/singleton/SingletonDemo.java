@@ -31,7 +31,7 @@ final class Singleton1 {
 }
 
 /**
- * 方法二：虽然在多线程环境中能工作，但工作效率不高（初步饿汉式） 。加上final修饰符，防止用户继承该类，使用clone方法创建出该单例实例的另一个实例
+ * 方法二：虽然在多线程环境中能工作，但工作效率不高（初步饱汉式） 。加上final修饰符，防止用户继承该类，使用clone方法创建出该单例实例的另一个实例
  */
 final class Singleton2 {
 	private Singleton2() {
@@ -51,7 +51,7 @@ final class Singleton2 {
 }
 
 /**
- * 方法三：可行的解法，加同步锁前后两次判断实例是否已存在（完整饿汉式），不过较复杂
+ * 方法三：可行的解法，加同步锁前后两次判断实例是否已存在（完整饱汉式），不过较复杂
  * 加上final修饰符，防止用户继承该类，使用clone方法创建出该单例实例的另一个实例
  */
 final class Singleton3 {
@@ -74,7 +74,7 @@ final class Singleton3 {
 }
 
 /**
- * 方法四：饱汉式，一般开发使用这个。 加上final修饰符，防止用户继承该类，使用clone方法创建出该单例实例的另一个实例
+ * 方法四（推荐1）：饿汉式，一般开发使用这个。 加上final修饰符，防止用户继承该类，使用clone方法创建出该单例实例的另一个实例
  */
 final class Singleton4 {
 	private Singleton4() {
@@ -90,8 +90,8 @@ final class Singleton4 {
 /**
  * 方法五：使用了内部类创建实例。 加上final修饰符，防止用户继承该类，使用clone方法创建出该单例实例的另一个实例
  * 使用内部类可以避免这个问题，因为在多线程环境下，jvm对一个类的初始化会做限制，
- * 同一时间只会允许一个线程去初始化一个类，这样就从虚拟机层面避免了大部分单例实现的问题.
- * 参考链接： https://blog.csdn.net/gavin_dyson/article/details/70145374
+ * 同一时间只会允许一个线程去初始化一个类，这样就从虚拟机层面避免了大部分单例实现的问题. 参考链接：
+ * https://blog.csdn.net/gavin_dyson/article/details/70145374
  *
  * @author zhangcanlong
  * @date 2018年9月16日
@@ -112,20 +112,30 @@ final class Singleton5 {
 }
 
 /**
- * 方法六：枚举式单例 。这种方法不仅能解决多线程同步问题，而且能防止反序列化重新创建新的对象，不过由于jdk1.5中才加入enum特性，所以不常用
+ * 方法六（推荐2）：枚举式单例
+ * 。这种方法不仅能解决多线程同步问题，而且能防止反序列化重新创建新的对象，不过由于jdk1.5中才加入enum特性，所以不常用。调用方法Singleton6.INSTANCE.getResource();
  *
  * @author zhangcanlong
  * @date 2018年9月18日
  */
 enum Singleton6 {
 	INSATANCE;
+	// 表示唯一的资源
+	private String resource = "";
 
-	public void getInstance() {
+	Singleton6() {
+		// 初始化做某些事情
+		resource = "do something";
+	}
+
+	// 单例得到resource
+	public String getResource() {
+		return resource;
 	}
 }
 
 /**
- * 登记式，spring IOC 就是使用该方法实现
+ * 方法七：登记式，spring IOC 就是使用该方法实现
  *
  * @author zhangcanlong
  * @date 2018年9月18日
