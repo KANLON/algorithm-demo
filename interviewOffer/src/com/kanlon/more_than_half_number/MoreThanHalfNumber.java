@@ -1,5 +1,8 @@
 package com.kanlon.more_than_half_number;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 面试题29：数组中出现次数超过一半的数字
  *
@@ -16,24 +19,27 @@ public class MoreThanHalfNumber {
 		int[] numbers1 = { 1, 2, 4, 43, 2, 2, 2 };
 		System.out.println(test.findMoreThanHalfNum1(numbers1, numbers1.length));
 		System.out.println(test.findMoreThanHalfNum2(numbers1));
+		System.out.println(test.findMoreThanHalfNum3(numbers1));
 		// 功能测试2（有多个元素，且有一个元素次数等于半数）
 		int[] numbers2 = { 1, 2, 4, 43, 2, 3, 2 };
 		System.out.println(test.findMoreThanHalfNum1(numbers2, numbers2.length));
 		System.out.println(test.findMoreThanHalfNum2(numbers2));
-
+		System.out.println(test.findMoreThanHalfNum3(numbers2));
 		// 功能测试3（有多个元素，且有一个元素次数小于半数）
 		int[] numbers3 = { 1, 2, 4, 43, 2, 4, 5 };
 		System.out.println(test.findMoreThanHalfNum1(numbers3, numbers3.length));
 		System.out.println(test.findMoreThanHalfNum2(numbers3));
+		System.out.println(test.findMoreThanHalfNum3(numbers3));
 
 		// 功能测试4（只有1个元素）
 		int[] numbers4 = { 1 };
-		System.out.println(test.findMoreThanHalfNum1(numbers4, numbers3.length));
+		System.out.println(test.findMoreThanHalfNum1(numbers4, numbers4.length));
 		System.out.println(test.findMoreThanHalfNum2(numbers4));
-
+		System.out.println(test.findMoreThanHalfNum3(numbers4));
 		// 功能测试5（null）
 		System.out.println(test.findMoreThanHalfNum1(null, 0));
 		System.out.println(test.findMoreThanHalfNum2(null));
+		System.out.println(test.findMoreThanHalfNum3(null));
 	}
 
 	/**
@@ -73,7 +79,7 @@ public class MoreThanHalfNumber {
 			}
 		}
 		if (times * 2 <= length) {
-			return 0;
+			return null;
 		}
 
 		return result;
@@ -87,7 +93,7 @@ public class MoreThanHalfNumber {
 	 * @return
 	 */
 	public Integer findMoreThanHalfNum2(int[] numbers) {
-		if (numbers == null != numbers.length <= 0) {
+		if (numbers == null || numbers.length <= 0) {
 			return null;
 		}
 		int currentNum = numbers[0];
@@ -108,17 +114,53 @@ public class MoreThanHalfNumber {
 		if (times <= 0) {
 			return null;
 		}
+		// 检查结果是否符合
+		int count = 0;
+		for (int i = 0; i < numbers.length; ++i) {
+			if (numbers[i] == currentNum) {
+				count++;
+			}
+		}
+		if (count * 2 <= numbers.length) {
+			return null;
+		}
+
 		return currentNum;
 	}
 
 	/**
-	 * 解题思路3（使用4个临时变量）：
+	 * 解题思路3（使用HashMap(推荐，较通用),时间复杂度O(n)）：（1）使用HashMap中的key存储出现的数字，value存储该数字出现的次数。
+	 * （2）遍历数组，如果不存在该key则，存入key，value设置为1，如果存在该key，则value++；
+	 * （3）最后将获取所有key，遍历value，找出最大的value值，对应的key则是出现次数的最多的数字。
 	 *
 	 * @return
 	 */
-	public int findMoreThanHalfNum3() {
-
-		return 0;
+	public Integer findMoreThanHalfNum3(int[] numbers) {
+		if (numbers == null || numbers.length <= 0) {
+			return null;
+		}
+		Map<Integer, Integer> map = new HashMap<>();
+		for (int i = 0; i < numbers.length; i++) {
+			if (map.containsKey(numbers[i])) {
+				map.put(numbers[i], map.get(numbers[i]) + 1);
+			} else {
+				map.put(numbers[i], 1);
+			}
+		}
+		// 遍历所有key
+		Integer maxValueKey = null;
+		int maxValue = 0;
+		for (Integer key : map.keySet()) {
+			if (map.get(key) > maxValue) {
+				maxValueKey = key;
+				maxValue = map.get(key);
+			}
+		}
+		// 检查出现次数是否大于数组长度的一半
+		if (maxValue * 2 <= numbers.length) {
+			maxValueKey = null;
+		}
+		return maxValueKey;
 	}
 
 	/**
