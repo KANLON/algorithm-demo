@@ -1,5 +1,7 @@
 package com.kanlon.k_least_numbers;
 
+import java.util.Arrays;
+
 /**
  * 面试题30：最小的k个数
  * <p>
@@ -10,7 +12,16 @@ package com.kanlon.k_least_numbers;
  */
 public class KLeastNumbers {
 	public static void main(String[] args) {
+		// 测试
+		KLeastNumbers test = new KLeastNumbers();
 
+		// 功能测试1（多个元素，有多个相同，寻找最小的多个元素）
+		int[] ints1 = { 4, 5, 1, 6, 2, 7, 3, 8 };
+		int[] output = new int[ints1.length];
+		test.getLeastNumbersWithHead(ints1, ints1.length, output, 4);
+		System.out.println("功能测试1：" + Arrays.toString(ints1));
+		test.getLeastNumbersWithQuickSort(ints1, ints1.length, output, 4);
+		System.out.println("功能测试1：" + Arrays.toString(ints1));
 	}
 
 	/**
@@ -52,8 +63,24 @@ public class KLeastNumbers {
 		}
 	}
 
-	public void getLeastNumbersWithStack(int[] datas, int n, int[] output, int k) {
-
+	/**
+	 * 解题思路2（利用最大堆）：（1）要寻找最小的k个数，先使用最大堆存储数组的前k个数，接着从k+1个元素开始遍历数组，如果元素比最大堆堆顶元素小，则删除堆顶元素，并将该元素添加到堆中。最后遍历堆可以得到最小的k个元素了。
+	 *
+	 * @param datas
+	 *            要寻找的数组
+	 * @param n
+	 *            数组的长度
+	 * @param output
+	 *            最小的k个数的数组
+	 * @param k
+	 *            最小的k个数
+	 */
+	public void getLeastNumbersWithHead(int[] datas, int n, int[] output, int k) {
+		if (datas == null || n <= 0 || k > n || k <= 0) {
+			return;
+		}
+		TopN topn = new TopN();
+		topn.findTopN(k, datas);
 	}
 
 	/**
@@ -106,6 +133,86 @@ public class KLeastNumbers {
 		int temp = data[a];
 		data[a] = data[b];
 		data[b] = temp;
+	}
+
+}
+
+class TopN {
+	// 父节点
+	private int parent(int n) {
+		return (n - 1) / 2;
+	}
+
+	// 左孩子
+	private int left(int n) {
+		return 2 * n + 1;
+	}
+
+	// 右孩子
+	private int right(int n) {
+		return 2 * n + 2;
+	}
+
+	// 构造堆
+	private void buildHeap(int n, int[] data) {
+		for (int i = 1; i < n; i++) {
+			int t = i;
+			// 调整堆
+			while (t != 0 && data[parent(t)] > data[t]) {
+				// 交换data[t]和data[parent(t)]的值
+				int temp = data[t];
+				data[t] = data[parent(t)];
+				data[parent(t)] = temp;
+
+				t = parent(t);
+			}
+		}
+	}
+
+	// 调整data[i]
+	private void adjust(int i, int n, int[] data) {
+		if (data[i] <= data[0]) {
+			return;
+		}
+		// 置换堆顶
+		int temp = data[i];
+		data[i] = data[0];
+		data[0] = temp;
+		// 调整堆顶
+		int t = 0;
+		while ((left(t) < n && data[t] > data[left(t)]) || (right(t) < n && data[t] > data[right(t)])) {
+			if (right(t) < n && data[right(t)] < data[left(t)]) {
+				// 右孩子更小，置换右孩子
+				temp = data[t];
+				data[t] = data[right(t)];
+				data[right(t)] = temp;
+				t = right(t);
+			} else {
+				// 否则置换左孩子
+				temp = data[t];
+				data[t] = data[left(t)];
+				data[left(t)] = temp;
+				t = left(t);
+			}
+		}
+	}
+
+	// 寻找topN，该方法改变data，将topN排到最前面
+	public void findTopN(int n, int[] data) {
+		// 先构建n个数的小顶堆
+		buildHeap(n, data);
+		// n往后的数进行调整
+		for (int i = n; i < data.length; i++) {
+			adjust(i, n, data);
+		}
+	}
+
+	// 打印数组
+	public void print(int[] data) {
+		for (int i = 0; i < data.length; i++) {
+			System.out.print(data[i] + " ");
+		}
+		System.out.println();
 	}
 
 }
