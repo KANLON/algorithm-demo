@@ -180,10 +180,15 @@ public class MoreThanHalfNumber {
 		if (data == null || length < 0 || start < 0 || end >= length) {
 			throw new IllegalArgumentException("参数错误");
 		}
+		// 基准元素的下标
 		int index = start;
+		// 将基准元素移动到最后，和首元素交换
 		swap(data, index, end);
+		// 用来表示第几个比基准元素小的数组中的下标
 		int small = start - 1;
+		// 遍历数组
 		for (index = start; index < end; ++index) {
+			// 如果当前元素小于基准元素，则将其换到前面去
 			if (data[index] < data[end]) {
 				++small;
 				if (small != index) {
@@ -192,6 +197,7 @@ public class MoreThanHalfNumber {
 			}
 		}
 		++small;
+		// 将基准元素交换回中间
 		swap(data, small, end);
 		return small;
 	}
