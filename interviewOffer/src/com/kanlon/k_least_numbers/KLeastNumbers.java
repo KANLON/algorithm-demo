@@ -1,6 +1,8 @@
 package com.kanlon.k_least_numbers;
 
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 
 /**
  * 面试题30：最小的k个数
@@ -17,15 +19,86 @@ public class KLeastNumbers {
 
 		// 功能测试1（多个元素，有多个相同，寻找最小的多个元素）
 		int[] ints1 = { 4, 5, 1, 6, 2, 7, 3, 8 };
-		int[] output = new int[ints1.length];
-		test.getLeastNumbersWithHead(ints1, ints1.length, output, 4);
-		System.out.println("功能测试1：" + Arrays.toString(ints1));
-		test.getLeastNumbersWithQuickSort(ints1, ints1.length, output, 4);
-		System.out.println("功能测试1：" + Arrays.toString(ints1));
+		int[] output1 = new int[4];
+		test.getLeastNumbersWithHead(ints1, ints1.length, output1, 4);
+		System.out.println("功能测试1：（方法一）" + Arrays.toString(output1));
+		test.getLeastNumbersWithQuickSort(ints1, ints1.length, output1, 4);
+		System.out.println("功能测试1（方法二）：" + Arrays.toString(output1));
+		// 功能测试2（相同元素大于要求的最小元素数）
+		int[] ints2 = { -1, -1, -1, -1, 2, 2 };
+		int[] output2 = new int[3];
+		test.getLeastNumbersWithHead(ints2, ints2.length, output2, 3);
+		System.out.println("功能测试2（方法一）：" + Arrays.toString(output2));
+		test.getLeastNumbersWithQuickSort(ints2, ints2.length, output2, 3);
+		System.out.println("功能测试2（方法一）：" + Arrays.toString(output2));
+
+		// 特殊测试（1），单个元素
+		int[] ints3 = { 1 };
+		int[] output3 = new int[1];
+		test.getLeastNumbersWithHead(ints3, ints3.length, output3, 1);
+		System.out.println("特殊测试（1），单个元素（方法一）：" + Arrays.toString(output3));
+		test.getLeastNumbersWithQuickSort(ints3, ints3.length, output3, 1);
+		System.out.println("特殊测试（1），单个元素（方法一）：" + Arrays.toString(output3));
+		// 特殊测试（2），null
+		int[] ints4 = null;
+		int[] output4 = null;
+		test.getLeastNumbersWithHead(ints4, 0, output4, 0);
+		System.out.println("特殊测试（2），null：" + Arrays.toString(output4));
+		test.getLeastNumbersWithQuickSort(ints4, 0, output4, 0);
+		System.out.println("特殊测试（2），null：" + Arrays.toString(output4));
+
 	}
 
 	/**
-	 * 解题思路1(使用快速排序的思路)：（1）因为快速排序是选定一个基准元素，将比基准元素小的放在左边，比基准元素大的放在右边。
+	 * 解题思路1（利用最大堆，推荐，适合海量数量）：（1）要寻找最小的k个数，先使用最大堆存储数组的前k个数。
+	 * (2)接着从k+1个元素开始遍历数组，如果元素比最大堆堆顶元素小，则删除堆顶元素，并将该元素添加到堆中。最后遍历堆可以得到最小的k个元素了。
+	 *
+	 * @param datas
+	 *            要寻找的数组
+	 * @param n
+	 *            数组的长度
+	 * @param output
+	 *            最小的k个数的数组
+	 * @param k
+	 *            最小的k个数
+	 */
+	public void getLeastNumbersWithHead(int[] datas, int n, int[] output, int k) {
+		if (datas == null || n <= 0 || k > n || k <= 0) {
+			return;
+		}
+		// 存放最小k个数的队列（内部使用堆实现）
+		PriorityQueue<Integer> queue = new PriorityQueue<>(k, new Comparator<Integer>() {
+			// 实现最大堆（需要添加这个类才能实现最大堆，默认是最小堆，队列头是最小元素）
+			@Override
+			public int compare(Integer o1, Integer o2) {
+				return o2.compareTo(o1);
+			}
+		});
+
+		// 遍历数组
+		for (int i = 0; i < n; i++) {
+			if (queue.size() < k) {
+				queue.offer(datas[i]);
+				continue;
+			}
+			if (datas[i] < queue.peek()) {
+				queue.poll();
+				queue.offer(datas[i]);
+			}
+		}
+
+		// 遍历最小的k个数的队列
+		for (int i = 0; i < k; i++) {
+			output[i] = queue.poll();
+		}
+
+		// 第二种方法中自己构造最大堆
+		// TopN topn = new TopN();
+		// topn.findTopN(k, datas);
+	}
+
+	/**
+	 * 解题思路2(使用快速排序的思路)：（1）因为快速排序是选定一个基准元素，将比基准元素小的放在左边，比基准元素大的放在右边。
 	 * （2）因此只要往k为下标那边进行快速排序的递归算法，当基准元素的下标等于k时，则在数组左边的k个元素就是数组中最小的k个数字
 	 * <p>
 	 * 这种方法的时间复杂度O(n)，不过需要更改数组的原来的元素位置，另一方面对数组进行了部分排序
@@ -46,7 +119,7 @@ public class KLeastNumbers {
 		int start = 0;
 		int end = n - 1;
 		int index = partition(datas, n, start, end);
-		while (index != k) {
+		while (index != k && start < end) {
 			// 往左边继续递归
 			if (index > k) {
 				end = index - 1;
@@ -58,29 +131,9 @@ public class KLeastNumbers {
 			}
 		}
 		// 遍历左边k个元素，即最小的k个数
-		for (int i = 0; i <= index; ++i) {
+		for (int i = 0; i < k; ++i) {
 			output[i] = datas[i];
 		}
-	}
-
-	/**
-	 * 解题思路2（利用最大堆）：（1）要寻找最小的k个数，先使用最大堆存储数组的前k个数，接着从k+1个元素开始遍历数组，如果元素比最大堆堆顶元素小，则删除堆顶元素，并将该元素添加到堆中。最后遍历堆可以得到最小的k个元素了。
-	 *
-	 * @param datas
-	 *            要寻找的数组
-	 * @param n
-	 *            数组的长度
-	 * @param output
-	 *            最小的k个数的数组
-	 * @param k
-	 *            最小的k个数
-	 */
-	public void getLeastNumbersWithHead(int[] datas, int n, int[] output, int k) {
-		if (datas == null || n <= 0 || k > n || k <= 0) {
-			return;
-		}
-		TopN topn = new TopN();
-		topn.findTopN(k, datas);
 	}
 
 	/**
@@ -137,6 +190,12 @@ public class KLeastNumbers {
 
 }
 
+/**
+ * 自己构造的最大堆
+ *
+ * @author zhangcanlong
+ * @date 2019年1月26日
+ */
 class TopN {
 	// 父节点
 	private int parent(int n) {
