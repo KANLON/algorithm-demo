@@ -370,7 +370,7 @@ class BinaryTreeNode{
 题目：输入一个整数n，求从1到n这n个整数的十进制中1出现的次数。例如输入12，从1到12这些整数中包含1,10,11,12,1一共出现了5次。<br/>
 
 答案：<br/>
-<a href='/blob/master/interviewOffer/src/com/kanlon/number_of_1'>number_of_1</a><br/>
+<a href='/interviewOffer/src/com/kanlon/number_of_1'>number_of_1</a><br/>
 <br/>
 
 
