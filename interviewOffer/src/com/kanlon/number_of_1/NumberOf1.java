@@ -79,8 +79,8 @@ public class NumberOf1 {
 		int i = 1;// 当前位
 		int current = 0, after = 0, before = 0;
 		while ((n / i) != 0) {
-			current = (n / i) % 10; // 高位数字
-			before = n / (i * 10); // 当前位数字
+			current = (n / i) % 10; // 当前位数字
+			before = n / (i * 10); // 高位数字
 			after = n - (n / i) * i; // 低位数字
 			// 如果为0,出现1的次数由高位决定,等于高位数字 * 当前位数
 			if (current == 0) {
