@@ -373,6 +373,13 @@ class BinaryTreeNode{
 <a href='/interviewOffer/src/com/kanlon/number_of_1'>number_of_1</a><br/>
 <br/>
 
+### 面试题33：把数组排成最小的数
+题目：输入一个正整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。例如输入数组{3,32,321},则打印出这三个数字能排成的最小数字321323。<br/>
+
+答案：<br/>
+<a href='/interviewOffer/src/com/kanlon/sort_array_for_min_number'>sort_array_for_min_number</a><br/>
+<br/>
+
 
 
 ### 其他题目
