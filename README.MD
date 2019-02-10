@@ -388,6 +388,12 @@ class BinaryTreeNode{
 <a href='/interviewOffer/src/com/kanlon/ugly_number'>ugly_number</a><br/>
 <br/>
 
+### 面试题35：第一个只出现一次的字符
+题目：在字符串中找出第一个只出现一次的字符。如输入"abaccdeff"，则输出'b'.<br/>
+
+答案：<br/>
+<a href='/interviewOffer/src/com/kanlon/first_not_repeating_char'>first_not_repeating_char</a><br/>
+<br/>
 
 
 ### 其他题目
