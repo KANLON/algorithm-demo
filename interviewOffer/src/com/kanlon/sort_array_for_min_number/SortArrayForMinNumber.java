@@ -103,22 +103,22 @@ public class SortArrayForMinNumber {
 	 * @param list
 	 *            要存放排序结果的集合
 	 */
-	void fullSort(int[] numbers, int start, int end, List<String> list) {
-		if (numbers == null || numbers.length <= 0) {
-			return;
-		}
-		if (start > end) {
+	private void fullSort(int[] numbers, int start, int end, List<String> list) {
+		if (start >= end) {
 			StringBuilder build = new StringBuilder();
 			for (int number : numbers) {
 				build.append(number + "");
 			}
 			list.add(build.toString());
+			return;
 		}
+
+		int temp = numbers[start];
 		for (int i = start; i <= end; i++) {
 			// 交换两个数
-			int temp = numbers[start];
 			numbers[start] = numbers[i];
 			numbers[i] = temp;
+
 			fullSort(numbers, start + 1, end, list);
 			// 还原
 			numbers[i] = numbers[start];
