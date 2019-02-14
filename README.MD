@@ -404,6 +404,22 @@ class BinaryTreeNode{
 <br/>
 
 
+### 面试题37：两个链表的第一个公共结点
+
+题目：输入两个链表，找出它们的第一个公共结点。链表结点定义如下：<br/>
+```
+class ListNode{
+	int mNKey;
+	ListNode mPNext;
+}
+```
+<br/>
+
+答案：<br/>
+<a href='/interviewOffer/src/com/kanlon/first_common_nodes_in_lists'>first_common_nodes_in_lists</a><br/>
+<br/>
+
+
 ### 其他题目
 1.实现一个排序算法，要求时间效率O(n).对公司所有员工的年龄排序，公司总共有几万名员工。可以用辅助空间，只允许使用常量大小辅助空间，不得超过O(n)。<br/>
 答案：
