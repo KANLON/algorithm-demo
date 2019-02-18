@@ -419,6 +419,15 @@ class ListNode{
 <a href='/interviewOffer/src/com/kanlon/first_common_nodes_in_lists'>first_common_nodes_in_lists</a><br/>
 <br/>
 
+### 面试题38：数字在排序数组中出现的次数
+
+题目：统计一个数字在排序数组中出现的次数。例如输入排序数组{1,2,3,3,3,3,4,5}和数字3，由于3在这个数组中出现了4次，因此输出4.
+<br/>
+
+答案：<br/>
+<a href='/interviewOffer/src/com/kanlon/number_of_k'>number_of_k</a><br/>
+<br/>
+
 
 ### 其他题目
 1.实现一个排序算法，要求时间效率O(n).对公司所有员工的年龄排序，公司总共有几万名员工。可以用辅助空间，只允许使用常量大小辅助空间，不得超过O(n)。<br/>
