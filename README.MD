@@ -428,6 +428,18 @@ class ListNode{
 <a href='/interviewOffer/src/com/kanlon/number_of_k'>number_of_k</a><br/>
 <br/>
 
+### 面试题39：二叉树的深度
+
+题目：输入一个二叉树的根结点，求该数的深度。从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度。<br/>
+
+拓展：输入一颗二叉树的根结点，判断该数是不是平衡二叉树。如果某二叉树中任意结点的左右子树的深度相差不超过1，那么它就是一颗平衡二叉树。例如，下图中的二叉树就是一颗平衡二叉树.<br/>
+
+<img alt="深度为4的二叉树" src="https://raw.githubusercontent.com/KANLON/algorithmDemo/master/image/tree_depth.png"/><br/>
+
+答案：<br/>
+<a href='/interviewOffer/src/com/kanlon/tree_depth'>tree_depth</a><br/>
+<br/>
+
 
 ### 其他题目
 1.实现一个排序算法，要求时间效率O(n).对公司所有员工的年龄排序，公司总共有几万名员工。可以用辅助空间，只允许使用常量大小辅助空间，不得超过O(n)。<br/>
