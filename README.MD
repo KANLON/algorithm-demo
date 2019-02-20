@@ -434,7 +434,7 @@ class ListNode{
 
 拓展：输入一颗二叉树的根结点，判断该数是不是平衡二叉树。如果某二叉树中任意结点的左右子树的深度相差不超过1，那么它就是一颗平衡二叉树。例如，下图中的二叉树就是一颗平衡二叉树.<br/>
 
-<img alt="深度为4的二叉树" src="https://raw.githubusercontent.com/KANLON/algorithmDemo/master/image/tree_depth.png"/><br/>
+<img alt="深度为4的二叉树" src="https://raw.githubusercontent.com/KANLON/algorithmDemo/master/image/tree_depth.PNG"/><br/>
 
 答案：<br/>
 <a href='/interviewOffer/src/com/kanlon/tree_depth'>tree_depth</a><br/>

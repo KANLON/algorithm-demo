@@ -3,6 +3,9 @@
 
 输入一个二叉树的根结点，求该数的深度。从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度。
 
+<img alt="深度为4的二叉树" src="https://raw.githubusercontent.com/KANLON/algorithmDemo/master/image/tree_depth.PNG"/><br/>
+
+
 ### 解题思路
 
 解题思路1（深度遍历，不推荐,太复杂）：<br/>
