@@ -1,6 +1,7 @@
 package com.kanlon.numbers_appear_once;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -14,7 +15,23 @@ import java.util.List;
 public class NumbersAppearOnce {
     public static void main(String[] args) {
         NumbersAppearOnce test = new NumbersAppearOnce();
-
+        //功能测试1，有多个数，存在两个不同的数
+        int[] ints1 = {2,4,3,6,3,2,5,5};
+        System.out.println("功能测试1，有多个数，存在两个不同的数："+ Arrays.toString(test.findNumbersAppearOnce(ints1)));
+        //功能测试2，有多个数，只存在1个不同的数
+        int[] ints2 = {2,3,6,3,2,5,5};
+        System.out.println("功能测试2，有多个数，只存在1个不同的数："+ Arrays.toString(test.findNumbersAppearOnce(ints2)));
+        //功能测试3，只有两个不同的数
+        int[] ints3 = {2,4};
+        System.out.println("功能测试3，只有两个不同的数："+ Arrays.toString(test.findNumbersAppearOnce(ints3)));
+        //功能测试4，有两个相同的数
+        int[] ints4={2,2};
+        System.out.println("功能测试4，有两个相同的数："+ Arrays.toString(test.findNumbersAppearOnce(ints4)));
+        //功能测试5，只有一个数
+        int[] ints5={2};
+        System.out.println("功能测试5，只有一个数："+ Arrays.toString(test.findNumbersAppearOnce(ints5)));
+        // 特殊测试1，null
+        System.out.println("特殊测试1，null："+ Arrays.toString(test.findNumbersAppearOnce(null)));
 
     }
 
@@ -26,7 +43,7 @@ public class NumbersAppearOnce {
         //存放两个不同的元素
         int[] twoNum = new int[2];
         if(ints==null || ints.length<2){
-            return null;
+            return ints;
         }
         //保存原数组的二进制形式
         List<String> oldIntsBinaryStrs = new ArrayList<>();
@@ -37,11 +54,11 @@ public class NumbersAppearOnce {
             firstSum^=ints[i];
         }
         String firstSumBinaryStr = Integer.toBinaryString(firstSum);
-        //找出是那个位置上元素是1
+        //从右边，找出是那个位置上元素是1
         int index = -1;
-        for(int i=0;i<firstSumBinaryStr.length();i++){
+        for(int i=firstSumBinaryStr.length()-1;i>=0;i--){
             if(firstSumBinaryStr.charAt(i)=='1'){
-                index=i;
+                index=firstSumBinaryStr.length()-1-i;
                 break;
             }
         }
@@ -54,7 +71,7 @@ public class NumbersAppearOnce {
         List<Integer> list0 = new ArrayList<>();
         List<Integer> list1= new ArrayList<>();
         for(String str:oldIntsBinaryStrs){
-            if(str.length()>index && str.charAt(index)=='1'){
+            if(str.length()>index && str.charAt(str.length()-1-index)=='1'){
                 list1.add(Integer.parseInt(str,2));
             }else{
                 list0.add(Integer.parseInt(str,2));
