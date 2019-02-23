@@ -16,7 +16,7 @@ public class NumbersAppearOnce {
     public static void main(String[] args) {
         NumbersAppearOnce test = new NumbersAppearOnce();
         //功能测试1，有多个数，存在两个不同的数
-        int[] ints1 = {2,4,3,6,3,2,5,5};
+        int[] ints1 = {2,7,3,8,3,2,5,5};
         System.out.println("功能测试1，有多个数，存在两个不同的数："+ Arrays.toString(test.findNumbersAppearOnce(ints1)));
         //功能测试2，有多个数，只存在1个不同的数
         int[] ints2 = {2,3,6,3,2,5,5};
@@ -45,45 +45,32 @@ public class NumbersAppearOnce {
         if(ints==null || ints.length<2){
             return ints;
         }
-        //保存原数组的二进制形式
-        List<String> oldIntsBinaryStrs = new ArrayList<>();
         //将数组做异或
         int firstSum = 0;
-        for(int i=0;i<ints.length;i++){
-            oldIntsBinaryStrs.add(Integer.toBinaryString(ints[i]));
-            firstSum^=ints[i];
-        }
-        String firstSumBinaryStr = Integer.toBinaryString(firstSum);
-        //从右边，找出是那个位置上元素是1
-        int index = -1;
-        for(int i=firstSumBinaryStr.length()-1;i>=0;i--){
-            if(firstSumBinaryStr.charAt(i)=='1'){
-                index=firstSumBinaryStr.length()-1-i;
-                break;
-            }
+        for(int i=0;i<ints.length;i++) {
+            firstSum ^= ints[i];
         }
         //如果都是相同的话，则返回null
-        if(index==-1){
+        if(firstSum==0){
             return null;
         }
 
-        //将原数组划分为两个数组
-        List<Integer> list0 = new ArrayList<>();
-        List<Integer> list1= new ArrayList<>();
-        for(String str:oldIntsBinaryStrs){
-            if(str.length()>index && str.charAt(str.length()-1-index)=='1'){
-                list1.add(Integer.parseInt(str,2));
-            }else{
-                list0.add(Integer.parseInt(str,2));
-            }
+        //从右边，找出是那个位置上元素是1
+        int index = 0;
+        while(firstSum!=0 && (firstSum&1)==0){
+                index++;
+                firstSum>>=1;
         }
 
-        //最后分别异或这两个数组，得到这两个不同的数
-        for(Integer i:list0){
-            twoNum[0]^=i;
-        }
-        for(Integer i:list1){
-            twoNum[1]^=i;
+        //将原数组划分为两个数组进行异或
+        for(int i:ints){
+            //如果某个数的右边数起，第index位是0，归到第一个数组进行异或
+            if( ( (i>>index) & 1) ==0){
+                twoNum[0]^=i;
+            }else{
+                //如果某个数的右边数起，第index位是1，归到第一个数组进行异或
+                twoNum[1]^=i;
+            }
         }
         return twoNum;
     }
