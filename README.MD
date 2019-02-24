@@ -449,6 +449,16 @@ class ListNode{
 <br/>
 
 
+### 面试题41：和为s的两个数VS和为s的连续正数序列
+
+题目一：输入一个递增排序的数组和一个数字s，在数组中查找两个数，使得它们的和正好是s。如果有多对数字的和等于s，输出任意一对即可。<br/>
+
+题目二：输入一个正数s，打印出所有和为s的连续正数序列（至少含有两个数）。例如输入15，由于1+2+3+4+5=4+5+6+7+8，所以结果打印出3个连续序列1~5、4~6和7~8。
+
+答案：<br/>
+<a href='/interviewOffer/src/com/kanlon/continues_squence_with_sum'>two_numbers_or_continues_squence_with_sum</a><br/>
+<br/>
+
 
 
 ### 其他题目
