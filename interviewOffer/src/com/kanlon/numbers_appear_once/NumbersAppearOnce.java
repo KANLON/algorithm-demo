@@ -1,8 +1,6 @@
 package com.kanlon.numbers_appear_once;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * 面试题40：数组中只出现一次的数字
