@@ -460,6 +460,17 @@ class ListNode{
 <br/>
 
 
+### 面试题42：翻转单词顺序 VS 左旋转字符串
+
+题目一：输入一个英文句子，翻转句子中单词的顺序，但单词内字符的顺序不变。为简单起见，标点符号和普通字母一样处理。例如输入字符串“I am a student.”,则输出“student. a am I”.<br/>
+
+题目二：字符串的左旋转操作是把字符串前面的若干个字符转移到字符串的尾部。请定义一个函数实现字符串左旋转操作的功能。比如输入字符串"abcdefe"和数字2，该函数将返回左旋转2位得到的结果"cdefgab"。<br/>
+
+答案：<br/>
+<a href='/interviewOffer/src/com/kanlon/reverse_words_in_sentence_and_left_rotate_string'>reverse_words_in_sentence_and_left_rotate_string</a><br/>
+<br/>
+
+
 
 ### 其他题目
 1.实现一个排序算法，要求时间效率O(n).对公司所有员工的年龄排序，公司总共有几万名员工。可以用辅助空间，只允许使用常量大小辅助空间，不得超过O(n)。<br/>
