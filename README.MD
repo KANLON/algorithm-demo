@@ -471,6 +471,15 @@ class ListNode{
 <br/>
 
 
+### 面试题43：n个骰子的点数
+
+题目：把n个骰子扔在地上，所有骰子朝上一面的点数之和为s。输入n，打印出s的所有可能的值出现的概率。<br/>
+
+
+答案：<br/>
+<a href='/interviewOffer/src/com/kanlon/dices_probability'>dices_probability</a><br/>
+<br/>
+
 
 ### 其他题目
 1.实现一个排序算法，要求时间效率O(n).对公司所有员工的年龄排序，公司总共有几万名员工。可以用辅助空间，只允许使用常量大小辅助空间，不得超过O(n)。<br/>
