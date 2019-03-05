@@ -490,6 +490,15 @@ class ListNode{
 <a href='/interviewOffer/src/com/kanlon/continuous_cards'>continuous_cards</a><br/>
 <br/>
 
+### 面试题45：圆圈中最后的剩下的数字
+
+题目：0,1,...,n-1这n个数字排成一个圆圈，从数字0开始每次从这个圆圈里删除第m个数字。求出这个圆圈里剩下的最后一个数字。<br/>
+
+
+答案：<br/>
+<a href='/interviewOffer/src/com/kanlon/last_number_in_circle'>last_number_in_circle</a><br/>
+<br/>
+
 
 ### 其他题目
 1.实现一个排序算法，要求时间效率O(n).对公司所有员工的年龄排序，公司总共有几万名员工。可以用辅助空间，只允许使用常量大小辅助空间，不得超过O(n)。<br/>
