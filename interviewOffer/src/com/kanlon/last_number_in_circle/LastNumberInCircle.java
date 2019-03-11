@@ -12,6 +12,7 @@ import java.util.LinkedList;
 public class LastNumberInCircle {
     public static void main(String[] args) {
         LastNumberInCircle test  = new LastNumberInCircle();
+        //功能测试1（输入的m小于n）
 
 
     }
@@ -50,7 +51,22 @@ public class LastNumberInCircle {
         return linkedList.pop();
     }
 
-
+    /**
+     * 解题思路2：类推方法，查找每次删除的数字有那些规律
+     * @param n 要排成圈数的n个数
+     * @param m 从数字0开始每次从这个圈中删除第m个数字
+     * @return int 最后返回的数字
+     **/
+    public int findLashNubmerInCircle2(int n,int m){
+        if(n<1 || m<1){
+            return -1;
+        }
+        int last=0;
+        for(int i=2;i<=n;i++){
+            last= (last+m)%i;
+        }
+        return last;
+    }
 
 
 }
