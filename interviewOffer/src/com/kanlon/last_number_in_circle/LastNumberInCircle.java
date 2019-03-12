@@ -13,8 +13,17 @@ public class LastNumberInCircle {
     public static void main(String[] args) {
         LastNumberInCircle test  = new LastNumberInCircle();
         //功能测试1（输入的m小于n）
-
-
+        System.out.println("功能测试1（输入的m小于n）(方法一):"+test.findLashNumberInCircle1(5,2));
+        System.out.println("功能测试1（输入的m小于n）(方法二):"+test.findLashNumberInCircle2(5,2));
+        //功能测试2（输入的m大于n）
+        System.out.println("功能测试1（输入的m大于n）(方法一):"+test.findLashNumberInCircle1(5,6));
+        System.out.println("功能测试1（输入的m大于n）(方法二):"+test.findLashNumberInCircle2(5,6));
+        //性能测试1（n为4000，m为997）
+        System.out.println("性能测试1（n为4000，m为997）(方法一):"+test.findLashNumberInCircle1(4000,997));
+        System.out.println("性能测试1（n为4000，m为997）(方法二):"+test.findLashNumberInCircle2(4000,997));
+        //特殊输入测试（圆圈中有0个数字）
+        System.out.println("特殊输入测试（圆圈中有0个数字）(方法一):"+test.findLashNumberInCircle1(0,997));
+        System.out.println("特殊输入测试（圆圈中有0个数字）(方法二):"+test.findLashNumberInCircle2(0,997));
     }
 
 
@@ -25,9 +34,9 @@ public class LastNumberInCircle {
      * @param m 从数字0开始每次从这个圈中删除第m个数字
      * @return int 最后返回的数字
      **/
-    public int findLashNubmerInCircle(int n,int m){
+    public int findLashNumberInCircle1(int n,int m){
         if(n<=0){
-            throw new IllegalArgumentException("排成圈数的数不能小于等于0");
+            return -1;
         }
         //存储这个n个数的链表
         LinkedList<Integer> linkedList = new LinkedList<>();
@@ -45,7 +54,7 @@ public class LastNumberInCircle {
                 linkedList.remove(index);
                 needRemoveIndex=0;
             }else{
-                index=(index+1)%n;
+                index=(index+1)%(linkedList.size());
             }
         }
         return linkedList.pop();
@@ -57,7 +66,7 @@ public class LastNumberInCircle {
      * @param m 从数字0开始每次从这个圈中删除第m个数字
      * @return int 最后返回的数字
      **/
-    public int findLashNubmerInCircle2(int n,int m){
+    public int findLashNumberInCircle2(int n,int m){
         if(n<1 || m<1){
             return -1;
         }
