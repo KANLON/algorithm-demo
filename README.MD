@@ -499,6 +499,15 @@ class ListNode{
 <a href='/interviewOffer/src/com/kanlon/last_number_in_circle'>last_number_in_circle</a><br/>
 <br/>
 
+### 面试题46：求1+2+...+n
+
+题目：求1+2+...+n，要求不能使用乘除法，for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）.<br/>
+
+
+答案：<br/>
+<a href='/interviewOffer/src/com/kanlon/accumulate'>accumulate</a><br/>
+<br/>
+
 
 ### 其他题目
 1.实现一个排序算法，要求时间效率O(n).对公司所有员工的年龄排序，公司总共有几万名员工。可以用辅助空间，只允许使用常量大小辅助空间，不得超过O(n)。<br/>
