@@ -515,7 +515,7 @@ class ListNode{
 
 
 答案：<br/>
-<a href='/interviewOffer/src/com/kanlon/add_two_number'>add_two_number</a><br/>
+<a href='/interviewOffer/src/com/kanlon/add_two_numbers'>add_two_numbers</a><br/>
 <br/>
 
 ### 其他题目
