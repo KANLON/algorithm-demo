@@ -518,6 +518,23 @@ class ListNode{
 <a href='/interviewOffer/src/com/kanlon/add_two_numbers'>add_two_numbers</a><br/>
 <br/>
 
+
+### 面试题48：不能被继承的类
+
+题目：用C++设计一个不能被继承的类。
+
+该题因为Java有final关键字表示一个类型不能被继承，所以该题不能使用Java实现。
+
+### 面试题49：把字符串转换成整数。
+
+题目：把字符串转换成整数<br/>
+
+
+答案：<br/>
+<a href='/interviewOffer/src/com/kanlon/string_to_int'>string_to_int</a><br/>
+<br/>
+
+
 ### 其他题目
 1.实现一个排序算法，要求时间效率O(n).对公司所有员工的年龄排序，公司总共有几万名员工。可以用辅助空间，只允许使用常量大小辅助空间，不得超过O(n)。<br/>
 答案：
