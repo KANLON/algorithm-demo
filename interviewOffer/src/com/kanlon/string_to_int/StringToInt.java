@@ -21,11 +21,11 @@ public class StringToInt {
         //边界值测试1，最大的负整数
         System.out.println("边界值测试1，最大的负整数:"+test.stringToInt(String.valueOf(Integer.MIN_VALUE)));
         //特殊测试1，null
-      //  System.out.println("特殊测试1，null:"+test.stringToInt(null));
+        System.out.println("特殊测试1，null:"+test.stringToInt(null));
         //特殊测试2，""
-       // System.out.println("特殊测试2，\"\":"+test.stringToInt(""));
+        System.out.println("特殊测试2，\"\":"+test.stringToInt(""));
         //输入的字符串中有非数字字符
-       // System.out.println("输入的字符串中有非数字字符:"+test.stringToInt("1z234567"));
+        System.out.println("输入的字符串中有非数字字符:"+test.stringToInt("1z234567"));
         //输入的字符串中只有"+"或"-"
         System.out.println("输入的字符串中只有\"+\"或\"-\":"+test.stringToInt("-"));
     }
