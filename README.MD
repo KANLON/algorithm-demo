@@ -534,6 +534,15 @@ class ListNode{
 <a href='/interviewOffer/src/com/kanlon/string_to_int'>string_to_int</a><br/>
 <br/>
 
+### 面试题50：树中两个结点的最低公共祖先
+
+题目：树中两个结点的最低公共祖先<br/>
+
+
+答案：<br/>
+<a href='/interviewOffer/src/com/kanlon/common_parentln_tree'>common_parentln_tree</a><br/>
+<br/>
+
 
 ### 其他题目
 1.实现一个排序算法，要求时间效率O(n).对公司所有员工的年龄排序，公司总共有几万名员工。可以用辅助空间，只允许使用常量大小辅助空间，不得超过O(n)。<br/>
