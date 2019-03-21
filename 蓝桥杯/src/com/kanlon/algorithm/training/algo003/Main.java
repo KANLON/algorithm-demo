@@ -75,7 +75,7 @@ public class Main {
              }
              
              for (int i = 1; i < L; i++){
-            	 //从1开始;遍历数组，nums
+            	 //从第二行开始;遍历数组，nums
                  for (int j = 0; j < k; j++)
                 	 //二层指标
                      for (int x = 0; x < k; x++){
@@ -87,7 +87,7 @@ public class Main {
                          }  
                      }  
              }
-             //最后遍历最后一行，所有列的结果和即可
+             //最后遍历最后一行，从第一列开始的所有列的结果和即可，第一列时开头时0的情况
              for (int j = 1; j < k; j++){  
                  num += nums[L - 1][j];  
                  num %= MOD;  
